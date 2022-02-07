@@ -1,5 +1,9 @@
 #container {
     text-align: center;
     font-family: 'Arial Narrow';
-    color: rgba(224, 50, 201, 0.658)
+    color: rgba(255, 255, 255, 0.658)
+}
+
+body {
+    background-color: rgba(12, 31, 8, 0.774);
 }
