@@ -1,3 +1,10 @@
+header {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: rgba(3, 34, 12, 0.658)
+}
+
 #container {
     text-align: center;
     font-family: 'Arial Narrow';
@@ -5,5 +12,15 @@
 }
 
 body {
-    background-color: rgba(12, 31, 8, 0.774);
+    margin: 0px;
+    padding: 0px;
+}
+
+#home: {
+    background-color: lawngreen;
+    transition: width 2s, height 4s;
+}
+
+#second {
+    background-color: mediumblue;
 }
