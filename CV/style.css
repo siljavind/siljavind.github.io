@@ -6,7 +6,9 @@
         row-gap: 5px;
         margin: 0px;
         padding: 0px;
-        background-color: bisque;
+        /*background-color: bisque;*/
+        background-image: url(/assets/DinoGuy.jpg);
+        background-size: cover;
     }
 
     #sitemast {
