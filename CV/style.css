@@ -7,7 +7,14 @@
     ::-webkit-scrollbar{
         width: 10px;
     }
+    ::-webkit-scrollbar-track{
+        border-radius: 10px;
+    }
 
+    @font-face{
+        font-family: ArtDecoFont;
+        src: url(/assets/Semplicita/Semplicita\ Light.otf)
+    }
     .grid {
         display: grid;
         grid-template-columns: 25px 25px 25px auto 75px;
@@ -20,32 +27,39 @@
         text-align: center;       
     }
 
-    .button {        
+    .menu {        
         height: 25px;  
         margin-left: 25px;
+        padding-right: 5px;
         transform: rotate(90deg);
         transform-origin: top left;
-        border: 1px solid rgba(0, 0, 0);
-        border-radius: 0px 15px 15px 0px; 
-        color: black; 
-        background-color: rgba(255, 255, 255, 0.432);
-        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;        
+        border: 1px solid #fff;
+        border-radius: 0px 15px 0px 0px; 
+        color: #fff; 
+        background-color: #0000;
+        font-family: ArtDecoFont;       
         text-align: right;
     }
     #Button1{
         grid-column: 1;
         grid-row: 1;
-        width: 30em;
+        width: 30em;        
     }
 
     #Button2{
         grid-column: 2;
         grid-row: 1;
-        width: 25em;
+        width: 20em;
     }
 
     #Button3{
         grid-column: 3;
         grid-row: 1;
         width: 20em;
+    }
+
+    #text1{
+        grid-column: 4;
+        grid-row: 3;
+        color: #ffff;
     }
