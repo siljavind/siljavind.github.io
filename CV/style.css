@@ -2,61 +2,50 @@
         margin: 0px;
         padding: 0px;
         background-color: black;
-        /*background: linear-gradient(180deg, rgb(0, 39, 16) 50%, #fff);
-        background-size: 400% 400%;
-        animation: GrBG 10s ease infinite;*/
     }
 
-    @keyframes GrBG {
-        0% {background-position: 20% 90%}
-        50% {background-position: 30% 70%}
-        100% {background-position: 20% 90%}
+    ::-webkit-scrollbar{
+        width: 10px;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: 2% 2% 2% auto;
+        grid-template-columns: 25px 25px 25px auto 75px;
         grid-template-rows: auto;
     }
 
-    .banner{
+    .logo{
         grid-column: 4;
-        grid-row: 1;
-        font-family: 'Arial';
-        font-size: 10px;
-        text-align: right;
-        color: #fff        
+        grid-row: 2;
+        text-align: center;       
     }
 
-    .button {
-        height: 19px;
-        margin-left: 25px;   
+    .button {        
+        height: 25px;  
+        margin-left: 25px;
         transform: rotate(90deg);
-        transform-origin: top left;       
-        border-radius: 0px 15px 15px 0px;     
-        border-color: bisque;   
-        background-color: bisque;
-        text-align-last: right;
+        transform-origin: top left;
+        border: 1px solid rgba(0, 0, 0);
+        border-radius: 0px 15px 15px 0px; 
+        color: black; 
+        background-color: rgba(255, 255, 255, 0.432);
+        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;        
+        text-align: right;
     }
     #Button1{
         grid-column: 1;
         grid-row: 1;
-        width: 40em;
+        width: 30em;
     }
 
     #Button2{
         grid-column: 2;
         grid-row: 1;
-        width: 35em;
+        width: 25em;
     }
 
     #Button3{
         grid-column: 3;
         grid-row: 1;
-        width: 30em;
+        width: 20em;
     }
-    
-
-    /*#second {
-
-    }*/
