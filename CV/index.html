@@ -7,14 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+
+    <script>
+        window.onscroll = () => {
+            let scrollTop = window.scrollY;
+            let docHeight = document.body.offsetHeight;
+            let winHeight = window.innerHeight;
+            let scrollPercent = scrollTop / (docHeight - winHeight);
+            let scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            document.querySelector(
+             ".pb"
+            ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+        }
+    </script>
 </head>
 
 <body>
+    <div class="pb"></div>
+    
     
     <div class="grid">
 
         <div class="logo">
-            <img src="/assets/logo.png" alt="Logo" width="20%">
+            <img src="/assets/logo.png" alt="Logo" width="30%">
         </div>
         
         <button class="menu" id="Button1" onclick="myFunction()">Contact</button>
@@ -22,7 +38,7 @@
         <button class="menu" id="Button3">Home</button>
 
         <div id="text1">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, sit, quasi, inventore voluptatum suscipit accusantium natus corrupti atque ea repudiandae cupiditate corporis! Qui, nisi deserunt maiores esse consequatur cumque animi, beatae laborum totam aliquid inventore voluptatum fuga. Illum perspiciatis fuga, similique a ab eligendi obcaecati, blanditiis quam sit, odio nesciunt?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo fugit harum magni error est minima repellat porro! Suscipit officia quibusdam mollitia repellendus quod veritatis perspiciatis amet doloremque in accusantium, deleniti illum id libero voluptas nesciunt fugit, quaerat, quis sunt maiores cumque a dolore provident ab! Aspernatur maxime harum unde eius nisi veniam temporibus nostrum minima nobis! Quaerat dicta tenetur omnis corporis itaque a, nihil non vel. Esse eligendi minima, asperiores, tempore nemo atque omnis corrupti, ipsa incidunt reiciendis sint dolorum officiis expedita quod quo tempora culpa possimus nisi! Distinctio nobis, aliquid labore perferendis molestiae officiis rem minima nemo in neque autem fuga sapiente reprehenderit animi quidem voluptates veritatis repudiandae illo assumenda! Ea sunt quas </p>
         </div>
                   
     </div>

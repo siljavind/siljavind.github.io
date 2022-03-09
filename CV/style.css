@@ -3,22 +3,30 @@
         padding: 0px;
         background-color: rgb(0, 0, 0);
         font-family: ArtDecoFont;
-    }
 
-    body::-webkit-scrollbar{
+    }
+    .pb {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 5px;
+        background: transparent;
+        border: 1px solid #ffff;
+      }
+           
+      ::-webkit-scrollbar{
+        overflow: hidden;
+      }
+    /*body::-webkit-scrollbar{
         width: 25px;
-                 
+        object-position: sticky;            
     }       
 
-    body::-webkit-scrollbar-track{
-        background: rgb(0, 0, 0);
-    }
-
     body::-webkit-scrollbar-thumb{
-        background: rgb(0, 0, 0);       
+        background: transparent;       
         border-radius: 0px 0px 0px 50px;
-        border: 1px solid white;
-        border-top: none;
+        border: 1px solid white;*/
     }
     
     @font-face{
@@ -34,7 +42,8 @@
     .logo{
         grid-column: 4;
         grid-row: 2;
-        text-align: center;       
+        text-align: center;    
+ 
     }
 
     .menu {        
@@ -71,4 +80,4 @@
         grid-column: 1;
         grid-row: 3;
         color: #ffff;
-    }
+    }*/
