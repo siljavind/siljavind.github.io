@@ -15,7 +15,6 @@
         right: 25px;
         height: 100%;
         width: 5px;
-        border: 2px solid white;
     }
           
     ::-webkit-scrollbar {
@@ -41,10 +40,11 @@
         transform: rotate(90deg);
         transform-origin: top left;
         border: 1px solid #fff;
+        border-left: none;
         border-top-right-radius: 15px; 
         color: #fff; 
         background-color: #0000;               
-        text-align: right;
+        text-align: right;   
     }
 
     #Button1{
@@ -62,7 +62,7 @@
         width: 20em;
     }
 
-    #text1{
-        grid-area: 6 / 1 / span 28;
+    .text{
+        grid-area: 4 / 4 / span 2 ;
         color: #ffff;
     }

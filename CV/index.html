@@ -5,29 +5,11 @@
     <title>Silja Vind Jørgensen</title>
     <link rel="icon" href="assets/favicon.ico" type="image/gif">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    <script src="/CV/js.js"></script> 
 </head>
-
-<script>
-    
-    window.onscroll = () => {
-        let scrollTop = window.scrollY;
-        let docHeight = document.body.offsetHeight;
-        let winHeight = window.innerHeight;
-        let scrollPercent = scrollTop / (docHeight - winHeight);
-        let scrollPercentRounded = Math.round(scrollPercent * 100);
-        
-        document.querySelector(
-         ".scroller"
-        ) //.style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
-    }
-
-    function myFunction() {
-        document.getElementById("Button2").innerHTML = "Heyo";
-    }
-
-</script>
 
 <body>
     <div class="scroller"></div> 
@@ -39,13 +21,13 @@
         </div>
         
         <button class="menu" id="Button1">Contact</button>
-        <button class="menu" id="Button2" onclick="myFunction()">Wat</button>
+        <button class="menu" id="Button2" onclick="myHeyo()">Wat</button>
         <button class="menu" id="Button3">Home</button>
 
-        <div id="text1">
+        <div class="text">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo fugit harum magni error est minima repellat porro! Suscipit officia quibusdam mollitia repellendus quod veritatis perspiciatis amet doloremque in accusantium, deleniti illum id libero voluptas nesciunt fugit, quaerat, quis sunt maiores cumque a dolore provident ab! Aspernatur maxime harum unde eius nisi veniam temporibus nostrum minima nobis! Quaerat dicta tenetur omnis corporis itaque a, nihil non vel. Esse eligendi minima, asperiores, tempore nemo atque omnis corrupti, ipsa incidunt reiciendis sint dolorum officiis expedita quod quo tempora culpa possimus nisi! Distinctio nobis, aliquid labore perferendis molestiae officiis rem minima nemo in neque autem fuga sapiente reprehenderit animi quidem voluptates veritatis repudiandae illo assumenda! Ea sunt quas </p>
         </div>
                   
     </div>
-
+</body>
 </html>
