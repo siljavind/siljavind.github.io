@@ -14,7 +14,7 @@ function myHeyo() {
     document.getElementById("buttonW").innerHTML = "Heyo";
 }
 
-function getElmt() {
-    var elmt = document.getElementById("contact");
+function getElmt(i) {
+    var elmt = document.getElementById(i);
     elmt.scrollIntoView();
 }
