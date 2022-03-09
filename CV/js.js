@@ -11,7 +11,7 @@ window.onscroll = () => {
 }
 
 function myHeyo() {
-    document.getElementById("buttonW").innerHTML = "Heyo";
+    document.getElementById("buttonW").innerHTML = "Bitch";
 }
 
 function getElmt(i) {
