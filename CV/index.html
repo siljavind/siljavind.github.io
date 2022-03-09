@@ -6,35 +6,34 @@
     <link rel="icon" href="assets/favicon.ico" type="image/gif">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-
-    <script>
-        window.onscroll = () => {
-            let scrollTop = window.scrollY;
-            let docHeight = document.body.offsetHeight;
-            let winHeight = window.innerHeight;
-            let scrollPercent = scrollTop / (docHeight - winHeight);
-            let scrollPercentRounded = Math.round(scrollPercent * 100);
-            
-            document.querySelector(
-             ".pb"
-            ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
-        }
-    </script>
+    <meta charset="UTF-8"> 
 </head>
+
+<script>
+    window.onscroll = () => {
+        let scrollTop = window.scrollY;
+        let docHeight = document.body.offsetHeight;
+        let winHeight = window.innerHeight;
+        let scrollPercent = scrollTop / (docHeight - winHeight);
+        let scrollPercentRounded = Math.round(scrollPercent * 100);
+        
+        document.querySelector(
+         ".pb"
+        ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+    }
+</script>
 
 <body>
     <div class="pb"></div>
-    
-    
+        
     <div class="grid">
 
         <div class="logo">
-            <img src="/assets/logo.png" alt="Logo" width="30%">
+            <img src="/assets/logo.png" alt="Logo" width="20%">
         </div>
         
-        <button class="menu" id="Button1" onclick="myFunction()">Contact</button>
-        <a class="menu" id="Button2" href="/assets/DinoGuy.jpg" target="_top">Wat</a>
+        <button class="menu" id="Button1">Contact</button>
+        <button class="menu" id="Button2"  onclick="myFunction()" >Wat</button>
         <button class="menu" id="Button3">Home</button>
 
         <div id="text1">
