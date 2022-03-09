@@ -11,10 +11,10 @@ window.onscroll = () => {
 }
 
 function myHeyo() {
-    document.getElementById("Button2").innerHTML = "Heyo";
+    document.getElementById("buttonW").innerHTML = "Heyo";
 }
 
-function getElmt(i) {
-    var elmt = document.getElementById(i);
+function getElmt() {
+    var elmt = document.getElementById("contact");
     elmt.scrollIntoView();
 }
