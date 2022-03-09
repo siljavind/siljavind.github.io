@@ -10,6 +10,7 @@
 </head>
 
 <script>
+    
     window.onscroll = () => {
         let scrollTop = window.scrollY;
         let docHeight = document.body.offsetHeight;
@@ -18,13 +19,18 @@
         let scrollPercentRounded = Math.round(scrollPercent * 100);
         
         document.querySelector(
-         ".pb"
-        ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+         ".scroller"
+        ) //.style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
     }
+
+    function myFunction() {
+        document.getElementById("Button2").innerHTML = "Heyo";
+    }
+
 </script>
 
 <body>
-    <div class="pb"></div>
+    <div class="scroller"></div> 
         
     <div class="grid">
 
@@ -33,7 +39,7 @@
         </div>
         
         <button class="menu" id="Button1">Contact</button>
-        <button class="menu" id="Button2"  onclick="myFunction()" >Wat</button>
+        <button class="menu" id="Button2" onclick="myFunction()">Wat</button>
         <button class="menu" id="Button3">Home</button>
 
         <div id="text1">

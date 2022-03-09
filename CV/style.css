@@ -5,26 +5,28 @@
         font-family: ArtDecoFont;
     }
 
-    .pb {
-        position: fixed;
-        right: 25px;
-        height: 100%;
-        width: 5px;
-    }
-           
-    ::-webkit-scrollbar {
-        overflow: hidden;
-        width: 0px;
-    }    
-    
     @font-face{
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
     }
+    
+    .scroller {
+        position: fixed;
+        right: 25px;
+        height: 100%;
+        width: 5px;
+        border: 2px solid white;
+    }
+          
+    ::-webkit-scrollbar {
+        overflow: hidden;
+        width: 0px;
+    }  
+        
     .grid {
         display: grid;
         grid-template-columns: 25px 25px 25px auto 75px;
-        grid-template-rows: 20px repeat(20, minmax(100px, content));
+        grid-template-rows: 20px repeat(50, minmax(100px, min-content));
     }
 
     .logo{
@@ -61,6 +63,6 @@
     }
 
     #text1{
-        grid-area: 9 / 1 / span 20;
+        grid-area: 6 / 1 / span 28;
         color: #ffff;
     }
