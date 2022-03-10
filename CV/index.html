@@ -5,7 +5,6 @@
     <title>Silja Vind Jørgensen</title>
     <link rel="icon" href="assets/favicon.ico" type="image/gif">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <script src="/CV/js.js"></script>
@@ -16,9 +15,9 @@
     <div class="scroller" id="logo"></div>
 
     <div class="menuGrid">
-        <div class="menu" id="bH" onmouseover="changeButtonWidth('bH')" onclick="getElmt('home')">Home</div>
-        <div class="menu" id="bC" onmouseover="changeButtonWidth('bC')" onclick="getElmt('contact')">Contact</div>
-        <div class="menu" id="bW" onmouseover="myHeyo('bW'); changeButtonWidth('bW')">Wat</div>        
+        <div class="menu" id="bH" onmouseover="changeWidth(id)" onclick="getElmt('home')">Home</div>
+        <div class="menu" id="bC" onmouseover="changeWidth(id)" onclick="getElmt('contact')">Contact</div>
+        <div class="menu" id="bW" onmouseover="changeWidth(id)" onclick="watHeyo(id)">Wat</div>        
     </div>
 
     <div class="mainGrid">
@@ -36,8 +35,7 @@
 
         <div id="contact">
             <p>
-                It me
-                (☞ﾟヮﾟ)☞
+                It me<br>(☞ﾟヮﾟ)☞
             </p>
         </div>
 

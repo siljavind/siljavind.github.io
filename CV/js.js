@@ -10,7 +10,7 @@ window.onscroll = () => {
     ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
 }
 
-function myHeyo(i) {
+function watHeyo(i) {
     document.getElementById(i).innerHTML = "Heyo";
 }
 
@@ -19,17 +19,16 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-function changeButtonWidth(i) {
+function changeWidth(i) {
     
     document.getElementById(i).addEventListener("mouseover", mouseOver);
     document.getElementById(i).addEventListener("mouseout", mouseOut)
-
+        
     function mouseOver() {
         document.getElementById(i).style.width = "350%";        
-    }
-
+    }  
     function mouseOut() {
         document.getElementById(i).style.width = "300%";
-    }
+    }       
            
 }
