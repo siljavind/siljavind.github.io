@@ -9,12 +9,12 @@ window.onscroll = () => {
         ".scroller"
     ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
 
-    if (docHeight < scrollPercent) {
-        document.getElementById('bH').style.width = "1000%";
-    }
-    if (scrollPercent < docHeight) {
-        document.getElementById('bH').style.width = "500%";
-    }
+
+    document.getElementById("bW").style.width = "300px";
+
+    /*if (scrollPercentRounded >= scrollPercentRounded - 1) {
+        document.getElementById('bH').style.width = "90%"
+    }*/
 
 }
 
