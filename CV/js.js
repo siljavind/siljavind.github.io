@@ -11,10 +11,26 @@ window.onscroll = () => {
 }
 
 function myHeyo() {
-    document.getElementById("buttonW").innerHTML = "Bitch";
+    document.getElementById("bW").innerHTML = "Munky";
 }
 
 function getElmt(i) {
     var elmt = document.getElementById(i);
     elmt.scrollIntoView();
+}
+
+function changeWidth(i){
+    const allElmts = [document.getElementsByClassName(menu)]
+    const otherElmts = new Array[allElmts];
+    var elmt = document.getElementById(i);
+    otherElmts.sort(function(otherElmts, i){return otherElmts - i});
+    
+    elmt.style.width = "40em";
+
+
+    class Players{
+        constructor(){
+            this.menu = []
+        }
+    }
 }
