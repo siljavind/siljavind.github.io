@@ -25,11 +25,11 @@ function changeButtonWidth(i) {
     document.getElementById(i).addEventListener("mouseout", mouseOut)
 
     function mouseOver() {
-        document.getElementById(i).style.width = "400%";        
+        document.getElementById(i).style.width = "350%";        
     }
 
     function mouseOut() {
-        document.getElementById(i).style.width = "100%";
+        document.getElementById(i).style.width = "300%";
     }
            
 }
