@@ -15,17 +15,19 @@
     <a id="top"></a>
     <div class="scroller"></div>
 
-    <div class="grid">
+    <div class="menuGrid">
+        <div class="menu" id="bH" onmouseover="changeButtonWidth('bH')" onclick="getElmt('top')">Home</div>
+        <div class="menu" id="bC" onmouseover="changeButtonWidth('bC')" onclick="getElmt('contact')">Contact</div>
+        <div class="menu" id="bW" onmouseover="myHeyo('bW'); changeButtonWidth('bW')">Wat</div>
+        
+    </div>
+
+    <div class="mainGrid">
 
         <div class="logo">
             <img src="/assets/logo.png" alt="Logo" width="20%">
         </div>
-
-        
-            <button class="menu" id="bC" onclick="changeWidth('bC'); getElmt('contact')">Contact</button>
-            <button class="menu" id="bW" onmouseover="myHeyo()">Wat</button>
-            <button class="menu" id="bH" onclick="getElmt('top')">Home</button>
-        
+                        
         
         <div class="text">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo fugit harum magni error est minima repellat porro! Suscipit officia quibusdam mollitia repellendus quod veritatis perspiciatis amet doloremque in accusantium, deleniti illum id

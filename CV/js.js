@@ -10,8 +10,8 @@ window.onscroll = () => {
     ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
 }
 
-function myHeyo() {
-    document.getElementById("bW").innerHTML = "Munky";
+function myHeyo(i) {
+    document.getElementById(i).innerHTML = "Heyo";
 }
 
 function getElmt(i) {
@@ -19,18 +19,17 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-function changeWidth(i){
-    const allElmts = [document.getElementsByClassName(menu)]
-    const otherElmts = new Array[allElmts];
-    var elmt = document.getElementById(i);
-    otherElmts.sort(function(otherElmts, i){return otherElmts - i});
+function changeButtonWidth(i) {
     
-    elmt.style.width = "40em";
+    document.getElementById(i).addEventListener("mouseover", mouseOver);
+    document.getElementById(i).addEventListener("mouseout", mouseOut)
 
-
-    class Players{
-        constructor(){
-            this.menu = []
-        }
+    function mouseOver() {
+        document.getElementById(i).style.width = "400%";        
     }
+
+    function mouseOut() {
+        document.getElementById(i).style.width = "100%";
+    }
+           
 }
