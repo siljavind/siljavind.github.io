@@ -8,6 +8,14 @@ window.onscroll = () => {
     document.querySelector(
         ".scroller"
     ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+
+    if (docHeight < scrollPercent) {
+        document.getElementById('bH').style.width = "1000%";
+    }
+    if (scrollPercent < docHeight) {
+        document.getElementById('bH').style.width = "500%";
+    }
+
 }
 
 function watHeyo(i) {
@@ -19,16 +27,29 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
+
+/*window.onscroll = function() { myFunction() };
+
+
+function myFunction() {
+    document.getElementById('bH').addEventListener("onscroll", onscroll)
+    document.getElementById('bH').addEventListener(scroll)
+    document.getElementById('bH').style.width = "350%";
+}*/
+
+
+
 function changeWidth(i) {
-    
+
     document.getElementById(i).addEventListener("mouseover", mouseOver);
     document.getElementById(i).addEventListener("mouseout", mouseOut);
-        
+
     function mouseOver() {
-        document.getElementById(i).style.width = "350%";        
-    }  
+        document.getElementById(i).style.width = "350%";
+    }
+
     function mouseOut() {
         document.getElementById(i).style.width = "300%";
-    }       
-           
+    }
+
 }
