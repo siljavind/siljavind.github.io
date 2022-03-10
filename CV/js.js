@@ -22,7 +22,7 @@ function getElmt(i) {
 function changeWidth(i) {
     
     document.getElementById(i).addEventListener("mouseover", mouseOver);
-    document.getElementById(i).addEventListener("mouseout", mouseOut)
+    document.getElementById(i).addEventListener("mouseout", mouseOut);
         
     function mouseOver() {
         document.getElementById(i).style.width = "350%";        
