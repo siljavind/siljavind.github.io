@@ -1,7 +1,7 @@
     html {
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
-        color: #ffff;                     
+        color: #000;                     
     }
 
     body {
@@ -27,10 +27,7 @@
         background: center center no-repeat fixed;
         background-size: cover;
         border-radius: 50%;
-        z-index: 2;
-        mask-image: radial-gradient( red 0%, green 36%, blue 70%);
-        background: url(/assets/orange.png);
-        
+        z-index: 2;       
     }
 
     @font-face {
@@ -110,8 +107,7 @@
     .startText {
         grid-area: 4 / 1 / span 10;
         /*background-image: url(/assets/orange.png), url(/assets/coral.png), url(/assets/pink.png);
-        mix-blend-mode: overlay;*/
-        clip-path: circle(80px at 50px 50px);
+        mix-blend-mode: overlay;*/       
     }
     
     #contact {
