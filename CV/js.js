@@ -7,7 +7,7 @@ window.onscroll = () => {
 
     document.querySelector(
         ".scroller"
-    ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+    ).style.background = 'linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)';
    
 }
 
@@ -21,42 +21,33 @@ function getElmt(i) {
 }
 
 (function() {
-    var follower, init, mouseX, mouseY, positionElement, printout, timer;
-  
-    follower = document.getElementById('follower');
-  
-    printout = document.getElementById('printout');
-  
-    mouseX = (event) => {
-      return event.clientX;
-    };
-  
-    mouseY = (event) => {
-      return event.clientY;
-    };
-  
-    positionElement = (event) => {
-        var mouse;
-        mouse = {
-          x: mouseX(event),
-          y: mouseY(event)
-        };
-        follower.style.top = mouse.y + 'px';
-        return follower.style.left = mouse.x + 'px';
-    };
-  
-    timer = false;
-  
-    window.onmousemove = init = (event) => {
-      var _event;
-      _event = event;
-      return timer = setTimeout(() => {
-        return positionElement(_event);
-      }, 1);
-    };
-  
-  }).call(this);
 
+    let magic = document.querySelector('.magic');
+    let magicWHalf = magic.offsetWidth / 2;
+  
+    document.body.addEventListener('mousemove',function(e){
+      magic.style.left = e.pageX - magicWHalf+'px';
+      magic.style.top = e.pageY - magicWHalf+'px';
+    });
+  
+    document.body.addEventListener('mouseout',function(e){
+      //magic.style.left = 'calc(50% - 10rem)';
+      //magic.style.top = 'calc(50% - 10rem)';
+    });
+  
+})();
+
+  
+/*window.onmouseover = () => {
+
+    document.querySelector(
+        ".startText"
+    ).style.opacity = '10%';
+
+    document.querySelector(
+
+    )
+}
 
 /*function changeWidth(i) { SO SMART BUT NO 
 

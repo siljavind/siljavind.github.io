@@ -1,69 +1,44 @@
     html {
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
-        background: #666;
-        color: #ffff;
-        cursor: none;
-    }
-    
-    #follower {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-    }
-    #follower #circle1 {
-        position: absolute;
-        animation: pulse 2s infinite;
-        background: #fff;
-        border-radius: 50%;
-        height: 0em;
-        width: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
-    }
-    #follower #circle2 {
-        position: absolute;      
-        animation: pulse 4s infinite;
-        background: rgba(200,0,0,0.8);
-        border-radius: 50%;
-        height: 0em;
-        width: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
+        color: #ffff;                     
     }
 
-    @keyframes pulse {
-        0% {
-          opacity: 0.2;
-          height: 1em;
-          width: 1em;
-          margin-top: -0.5em;
-          margin-left: -0.5em;
-        }
-        50% {
-          opacity: 0.9;
-          height: 3em;
-          width: 3em;
-          margin-top: -1.5em;
-          margin-left: -1.5em;
-        }
-        100% {
-          opacity: 0.2;
-          height: 1em;
-          width: 1em;
-          margin-top: -0.5em;
-          margin-left: -0.5em;
-        }
+    body {
+        margin: 0px;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-color: #000;
+        
+        overflow: hidden;
+        z-index: 1;
+        
+    }
+    body:hover {
+        cursor: crosshair;
+    }
+
+    .magic {
+        
+        position: absolute;
+        top: calc(50% - 10rem);
+        left: calc(50% - 10rem);
+        width: 20rem;
+        height: 20rem;
+        background: center center no-repeat fixed;
+        background-size: cover;
+        border-radius: 50%;
+        z-index: 2;
+        mask-image: radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255,255,255,0.8) 36%, rgba(255,255,255,0) 70%);
+        
+        
     }
 
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
-    }
-    
-    body {
-        margin: 0px;
-    }
+    }     
     
     .scroller {
         position: fixed;
@@ -72,29 +47,35 @@
         width: 1px;
     }
     
-     ::-webkit-scrollbar {
+    :-webkit-scrollbar {
         width: 0px;
     }
     
     .menuGrid {
+        float: left;
+        position: absolute;
         display: grid;
         grid-template-rows: repeat(4, 100px);
-        grid-template-columns: repeat(4, 25px) repeat(4, 0px);
-        float: left;
+        grid-template-columns: repeat(3, 25px) repeat(4, 0px);
         position: sticky;
         top: 0;
+        z-index: 3;
     }
     
     .mainGrid {
+        position: fixed;    
         display: grid;
         grid-template-rows: 10px repeat(50, 100px);
-        grid-template-columns: auto 100px;
+        grid-template-columns: auto;               
+        margin: 0px 100px 0px 100px;
+        z-index: 3;
     }
     
     .logo {
         grid-area: 2 / 1;
         text-align: center;
         width: 100%;
+        
     }
     
     .menu {
@@ -104,7 +85,7 @@
         padding: 1px 15px 0px 0px;
         transform: rotate(90deg);
         transform-origin: top left;
-        border: 1px solid #ffff;
+        border: 1px solid #fff;
         border-left: none;
         border-top-right-radius: 15px;
         text-align: right;
@@ -129,7 +110,9 @@
     }
         
     .startText {
-        grid-area: 4 / 1 / span 2;
+        grid-area: 4 / 1 / span 10;
+        /*background-image: url(/assets/orange.png), url(/assets/coral.png), url(/assets/pink.png);
+        mix-blend-mode: overlay;*/
     }
     
     #contact {
