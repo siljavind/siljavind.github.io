@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <script src="/CV/js.js"></script>
+    
 </head>
 
 <body>
+
+    <div id="follower">
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+    </div>
+
     <a id="home"></a>
     <div class="scroller"></div>
 
     <div class="menuGrid">
-        <div class="menu" id="bH" onmouseover="changeWidth(id)" onclick="getElmt('home')">Home</div>
-        <div class="menu" id="bC" onmouseover="changeWidth(id)" onclick="getElmt('contact')">Contact</div>
-        <div class="menu" id="bW" onmouseover="changeWidth(id)" onclick="watHeyo(id)">Wat</div>
+        <div class="menu" id="bHome" onclick="getElmt('home')">Home</div>
+        <div class="menu" id="bContact" onclick="getElmt('contact')">Contact</div>
+        <div class="menu" id="bWat" onclick="watHeyo(id)">Wat</div>
     </div>
 
     <div class="mainGrid">
@@ -26,7 +32,7 @@
             <img src="/assets/logo.png" alt="Logo" width="200">
         </div>
 
-        <div class="text">
+        <div class="startText">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo fugit harum magni error est minima repellat porro! Suscipit officia quibusdam mollitia repellendus quod veritatis perspiciatis amet doloremque in accusantium, deleniti illum id
                 libero voluptas nesciunt fugit, quaerat, quis sunt maiores cumque a dolore provident ab! Aspernatur maxime harum unde eius nisi veniam temporibus nostrum minima nobis! Quaerat dicta tenetur omnis corporis itaque a, nihil non vel. Esse
                 eligendi minima, asperiores, tempore nemo atque omnis corrupti, ipsa incidunt reiciendis sint dolorum officiis expedita quod quo tempora culpa possimus nisi! Distinctio nobis, aliquid labore perferendis molestiae officiis rem minima nemo
@@ -40,6 +46,7 @@
         </div>
 
     </div>
+    
 </body>
-
+<footer><script src="/CV/js.js"></script></footer>
 </html>

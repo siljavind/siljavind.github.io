@@ -8,14 +8,7 @@ window.onscroll = () => {
     document.querySelector(
         ".scroller"
     ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
-
-
-    document.getElementById("#bW").style.width = "300px";
-
-    /*if (scrollPercentRounded >= scrollPercentRounded - 1) {
-        document.getElementById('bH').style.width = "90%"
-    }*/
-
+   
 }
 
 function watHeyo(i) {
@@ -23,33 +16,59 @@ function watHeyo(i) {
 }
 
 function getElmt(i) {
-    var elmt = document.getElementById(i);
+    const elmt = document.getElementById(i);
     elmt.scrollIntoView();
 }
 
+(function() {
+    var follower, init, mouseX, mouseY, positionElement, printout, timer;
+  
+    follower = document.getElementById('follower');
+  
+    printout = document.getElementById('printout');
+  
+    mouseX = (event) => {
+      return event.clientX;
+    };
+  
+    mouseY = (event) => {
+      return event.clientY;
+    };
+  
+    positionElement = (event) => {
+        var mouse;
+        mouse = {
+          x: mouseX(event),
+          y: mouseY(event)
+        };
+        follower.style.top = mouse.y + 'px';
+        return follower.style.left = mouse.x + 'px';
+    };
+  
+    timer = false;
+  
+    window.onmousemove = init = (event) => {
+      var _event;
+      _event = event;
+      return timer = setTimeout(() => {
+        return positionElement(_event);
+      }, 1);
+    };
+  
+  }).call(this);
 
-/*window.onscroll = function() { myFunction() };
 
+/*function changeWidth(i) { SO SMART BUT NO 
 
-function myFunction() {
-    document.getElementById('bH').addEventListener("onscroll", onscroll)
-    document.getElementById('bH').addEventListener(scroll)
-    document.getElementById('bH').style.width = "350%";
-}*/
-
-
-
-function changeWidth(i) {
-
-    document.getElementById(i).addEventListener("mouseover", mouseOver);
-    document.getElementById(i).addEventListener("mouseout", mouseOut);
+    let elmt = document.getElementById(i);
+    
+    elmt.addEventListener("mouseover", mouseOver);
+    elmt.addEventListener("mouseout", mouseOut);
 
     function mouseOver() {
-        document.getElementById(i).style.width = "350%";
+        elmt.style.width = "350%";
     }
-
     function mouseOut() {
-        document.getElementById(i).style.width = "300%";
+        elmt.style.width = "300%";
     }
-
-}
+}*/
