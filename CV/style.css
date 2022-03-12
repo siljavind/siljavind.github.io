@@ -1,81 +1,83 @@
     html {
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
-        color: #000;                     
+        color: white;
+        background-color: black;
     }
-
-    body {
-        margin: 0px;
-        position: relative;       
-        width: 100%;               
-        overflow: hidden;
-        z-index: 1;
-        background: bisque;
-        
-    }
-    body:hover {
-        cursor: crosshair;
-    }
-
-  
-    .magic {
-        position: absolute;
-        top: calc(50% - 10rem);
-        left: calc(50% - 10rem);
-        width: 20rem;
-        height: 20rem;
-        background: center center no-repeat fixed;
-        background-size: cover;
-        border-radius: 50%;
-        z-index: 2;       
-    }
-
+    
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
-    }     
+    }
+    
+    #cursor {
+        position: relative;
+        transform: translate(-50%, -50%);
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border: 2px solid white;
+        z-index: 1;
+    }
+    
+    #cursor:before {
+        position: absolute;
+        width: var(--size);
+        height: var(--size);
+        --size: 0;
+        content: '';
+        left: var(--x);
+        top: var(--y);
+        background: radial-gradient(circle closest-side, pink, hotpink);
+        transition: width 0.2s ease, height 0.2s ease;
+    }
+    
+    #cursor:hover:before {
+        --size: 400px;
+    }
+    
+    body {
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        cursor: crosshair;
+    }
     
     .scroller {
         position: fixed;
-        right: 25px;
-        height: 100%;
         width: 1px;
+        height: 100%;
+        right: 25px;
     }
     
-    :-webkit-scrollbar {
+     ::-webkit-scrollbar {
         width: 0px;
-    }
-    
-    .menuGrid {
-        float: left;
-        position: absolute;
-        display: grid;
-        grid-template-rows: repeat(4, 100px);
-        grid-template-columns: repeat(3, 25px) repeat(4, 0px);
-        position: sticky;
-        top: 0;
-        z-index: 3;
+        height: 0px;
     }
     
     .mainGrid {
-        position: fixed;    
+        position: relative;
         display: grid;
         grid-template-rows: 10px repeat(50, 100px);
-        grid-template-columns: auto;               
+        grid-template-columns: auto;
         margin: 0px 100px 0px 100px;
-        z-index: 3;
+        z-index: 2;
     }
     
-    .logo {
-        grid-area: 2 / 1;
-        text-align: center;
-        width: 100%;
-        
+    .menuGrid {
+        position: sticky;
+        float: left;
+        display: grid;
+        grid-template-rows: repeat(4, 100px);
+        grid-template-columns: repeat(3, 25px) repeat(4, 0px);
+        top: 0;
+        z-index: 2;
     }
     
     .menu {
+        width: 400%;
         height: 23px;
-        width: 300%;
         margin-left: 25px;
         padding: 1px 15px 0px 0px;
         transform: rotate(90deg);
@@ -87,9 +89,9 @@
         transition: width ease-out 500ms;
         background-image: linear-gradient(to right, rgb(78, 73, 73), transparent);
     }
-
-    .menu:hover{
-        width: 350%;
+    
+    .menu:hover {
+        width: 450%;
     }
     
     #bHome {
@@ -103,14 +105,18 @@
     #bWat {
         grid-area: 1 / 1 / span 1 / span 8;
     }
-        
-    .startText {
-        grid-area: 4 / 1 / span 10;
-        /*background-image: url(/assets/orange.png), url(/assets/coral.png), url(/assets/pink.png);
-        mix-blend-mode: overlay;*/       
+    
+    .logo {
+        grid-area: 2 / 1;
+        width: 100%;
+        text-align: center;
     }
     
-    #contact {
+    .startText {
+        grid-area: 4 / 1 / span 10;
+    }
+    
+    .contact {
         grid-area: 30 / 1;
         text-align: center;
     }

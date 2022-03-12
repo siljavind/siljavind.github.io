@@ -7,8 +7,8 @@ window.onscroll = () => {
 
     document.querySelector(
         ".scroller"
-    ).style.background = 'linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)';
-   
+    ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+
 }
 
 function watHeyo(i) {
@@ -20,24 +20,78 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-(function() {
+/*const winSize = (e) => {
+    let rect = e.getBoundingClientRect();
 
-    let magic = document.querySelector('.magic');
-    let magicWHalf = magic.offsetWidth / 2;
-  
-    document.body.addEventListener('mousemove',function(e){
-      magic.style.left = e.pageX - magicWHalf+'px';
-      magic.style.top = e.pageY - magicWHalf+'px';
-    });
-  
-    document.body.addEventListener('mouseout',function(e){
-      //magic.style.left = 'calc(50% - 10rem)';
-      //magic.style.top = 'calc(50% - 10rem)';
-    });
-  
-})();
+    let left = rect.left + window.scrollX;
+    let top = rect.top + window.scrollY;
+    let right = rect.right + window.scrollX;
+    let bottom = rect.bottom + window.scrollY;
 
-  
+    if (rect.x === undefined) x = left;
+    else x = rect.x + window.scrollX;
+
+    if (rect.y === undefined) y = top;
+    else y = rect.y + window.scrollY;
+
+    let width = rect.width;
+    let height = rect.height;
+
+    return { left, top, right, bottom, width, height };
+};*/
+
+
+
+
+let cursor = document.querySelector('#cursor');
+const onMouseMove = (e) => {
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.rop = e.pageY + 'px';
+}
+document.addEventListener('mousemove', onMouseMove);
+
+/*cursor.addEventListener('mousemove', e => {
+
+
+    let rect = e.target.getBoundingClientRect();
+
+    let left = rect.left + window.scrollX;
+    let top = rect.top + window.scrollY;
+    let right = rect.right + window.scrollX;
+    let bottom = rect.bottom + window.scrollY;
+
+    let x = rect.x + window.scrollX;
+
+    let y = rect.y + window.scrollY;
+
+    let width = rect.width;
+    let height = rect.height;
+
+
+
+
+    x = e.clientX - rect.left;
+    y = e.clientY - rect.top;
+    cursor.style.setProperty('--x', x + 'px');
+    cursor.style.setProperty('--y', y + 'px');
+});*/
+
+
+
+
+
+
+
+
+
+/*let winWidth = window.innerWidth;
+let winHeight = window.innerHeight;
+let x = e.clientX - winWidth.left;
+let y = e.clientY - winHeight.top;
+cursor.style.setProperty('--x', x + 'px')
+cursor.style.setProperty('--y', y + 'px')
+
+
 /*window.onmouseover = () => {
 
     document.querySelector(
