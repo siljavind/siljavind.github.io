@@ -11,7 +11,7 @@
     }
     
     #cursor {
-        position: relative;
+        position: absolute;
         transform: translate(-50%, -50%);
         height: 35px;
         width: 35px;
@@ -26,10 +26,9 @@
         height: var(--size);
         --size: 0;
         content: '';
-        left: var(--x);
-        top: var(--y);
         background: radial-gradient(circle closest-side, pink, hotpink);
         transition: width 0.2s ease, height 0.2s ease;
+        transform: translate(-45%, -45%);
     }
     
     #cursor:hover:before {
@@ -49,6 +48,7 @@
         width: 1px;
         height: 100%;
         right: 25px;
+        z-index: 0;
     }
     
      ::-webkit-scrollbar {
@@ -62,7 +62,7 @@
         grid-template-rows: 10px repeat(50, 100px);
         grid-template-columns: auto;
         margin: 0px 100px 0px 100px;
-        z-index: 2;
+        z-index: 1;
     }
     
     .menuGrid {
@@ -72,7 +72,7 @@
         grid-template-rows: repeat(4, 100px);
         grid-template-columns: repeat(3, 25px) repeat(4, 0px);
         top: 0;
-        z-index: 2;
+        z-index: 1;
     }
     
     .menu {
