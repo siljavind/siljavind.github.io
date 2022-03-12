@@ -25,33 +25,22 @@
         width: 1000px;
         height: 1000px;
         border-radius: 50%;
-        background-image: radial-gradient(#f02f04, #ea8a05, #e10878a8, #f9a6e0, transparent);
-        background-size: 100% 100%;
-        /*animation: cursor 7s ease infinite alternate;*/
-        animation: fadeIn 2s ease-in-out 3s;
-        animation-fill-mode: forwards;
-        animation-delay: 1s;
+        background-image: radial-gradient(ellipse, #f02f04, #ea8a05, #e10878a8, #f9a6e0, transparent 50%);
+        background-size: 200% 200%;
+        animation: cursor 7s ease infinite alternate;
     }
     
-    @keyframes fadeIn {
+    @keyframes cursor {
         0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 0.9;
-        }
-    }
-    /*@keyframes cursor {
-        0% {
-            background-position: 50%
-        }
-        50% {
             background-position: 100%
         }
-        100% {
+        50% {
             background-position: 0%
         }
-    }*/
+        100% {
+            background-position: 100%
+        }
+    }
     
     body {
         width: 100%;
