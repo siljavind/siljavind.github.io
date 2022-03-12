@@ -20,13 +20,23 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-
-let cursor = document.querySelector('#cursor');
-const onMouseMove = (e) => {
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
+{
+    let cursor = document.querySelector('#cursor1');
+    const onMouseMove = (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    }
+    document.addEventListener('mousemove', onMouseMove);
+} {
+    let cursor = document.querySelector('#cursor2');
+    const onMouseMove = (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+    }
+    document.addEventListener('mousemove', onMouseMove);
 }
-document.addEventListener('mousemove', onMouseMove);
+
+
 
 /*function changeWidth(i) { SO SMART BUT NO 
 
