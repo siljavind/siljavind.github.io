@@ -7,7 +7,7 @@ window.onscroll = () => {
 
     document.querySelector(
         ".scroller"
-    ).style.background = `linear-gradient(to bottom, #ffff ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+    ).style.background = `linear-gradient(to bottom, #000 ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
 
 }
 
@@ -20,21 +20,17 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
+
 {
-    let cursor = document.querySelector('#cursor1');
-    const onMouseMove = (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
-    }
-    document.addEventListener('mousemove', onMouseMove);
-} {
-    let cursor = document.querySelector('#cursor2');
+    let cursor = document.querySelector('#cursors');
     const onMouseMove = (e) => {
         cursor.style.left = e.pageX + 'px';
         cursor.style.top = e.pageY + 'px';
     }
     document.addEventListener('mousemove', onMouseMove);
 }
+
+
 
 
 

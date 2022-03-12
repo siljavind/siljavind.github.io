@@ -9,37 +9,34 @@
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
     }
-    
-    #cursor1 {
+    /*#cursor1 {
         position: absolute;
         transform: translate(-50%, -50%);
         width: 1px;
         height: 1px;
         border-radius: 50%;
         border: 2px solid black;
-    }
+        display: block;
+    }*/
     
-    #cursor2 {
-        position: absolute;
+    #cursors {
+        position: relative;
         transform: translate(-50%, -50%);
         width: 1000px;
         height: 1000px;
-        border-radius: 50%;
-        background-image: radial-gradient(ellipse, #f02f04, #ea8a05, #e10878a8, #f9a6e0, transparent 50%);
-        background-size: 200% 200%;
-        animation: cursor 7s ease infinite alternate;
+        filter: blur(50px);
+        background-color: #ea8a05;
     }
     
-    @keyframes cursor {
-        0% {
-            background-position: 100%
-        }
-        50% {
-            background-position: 0%
-        }
-        100% {
-            background-position: 100%
-        }
+    #cursors:before {
+        content: '';
+        width: 800px;
+        height: 800px;
+        background-color: #f02f04;
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 100px;
     }
     
     body {
