@@ -22,18 +22,14 @@ function getElmt(i) {
 
 const cursorList = document.querySelectorAll(".cursor");
 for (let i = 0; i < cursorList.length; i++) {
-    const onMouseMove = (e) => {
-        cursorList[i].style.left = e.pageX + 'px';
-        cursorList[i].style.top = e.pageY + 'px';
-    }
-    document.addEventListener('mousemove', onMouseMove);        
+    document.addEventListener('mousemove', (e) => {
+        cursorList[i].style.cssText = `
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `;
+    });      
 }
     
-
-
-
-
-
 
 /*function changeWidth(i) { SO SMART BUT NO 
 
