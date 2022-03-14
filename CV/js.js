@@ -20,15 +20,16 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-
-{
-    let cursor = document.querySelector('#cursors');
+const cursorList = document.querySelectorAll(".cursor");
+for (let i = 0; i < cursorList.length; i++) {
     const onMouseMove = (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
+        cursorList[i].style.left = e.pageX + 'px';
+        cursorList[i].style.top = e.pageY + 'px';
     }
-    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mousemove', onMouseMove);        
 }
+    
+
 
 
 
