@@ -19,30 +19,33 @@
         mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
         -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));        
         clip-path: circle();        
-        animation: width 1s ease-out, height 5s ease-out;
+        animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
         transition: 0.8s linear;
     }
     #shadow1{
-        width: 2000px;
-        height: 2000px;
+        width: 1000px;
+        height: 1000px;
         background: radial-gradient(red,  black, transparent);
-
+        animation: pulse1 10s infinite;
+        
     }
     #shadow2{
         width: 600px;
         height: 600px;
         background: radial-gradient(orange, transparent, transparent);
-
+        animation-delay: 2s;
     }
     #shadow3{
         width: 300px;
         height: 300px;
         background: radial-gradient(hotpink, transparent, transparent);
+        animation-delay: 4s;
     }
     #shadow4{
         width: 200px;
         height: 200px;
         background: radial-gradient(white, transparent, transparent);
+        animation-delay: 6s;
     }    
     
     #mainCursor {
@@ -55,14 +58,14 @@
         border: 2px solid white;
         filter: none;
         mask-image: none;
-        -webkit-mask-image: none;
+        -webkit-mask-image: none;        
     }
     
     body {
         width: 100%;
         margin: 0;
         padding: 0;
-        /*cursor: none;*/
+        cursor: none;
     }
     
     .scroller {
@@ -138,4 +141,28 @@
     .contact {
         grid-area: 30 / 1;
         text-align: center;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes pulse1 {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.9;
+        }
+        100% {
+            opacity: 1;
+        }
     }

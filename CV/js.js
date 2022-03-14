@@ -46,7 +46,7 @@ for (let i = 0; i < shadowList.length; i++) {
     document.addEventListener('mouseup', (e) => {
         shadowList[i].style.cssText = `
         width: ${shadowList[i].clientWidth - 1000}px;
-        height: ${shadowList[i].clientHeight -1000}px;
+        height: ${shadowList[i].clientHeight - 1000}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
