@@ -2,7 +2,7 @@
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
         color: black;
-        background-color: black;
+        background-color: white;
         user-select: none;
     }
     
@@ -13,14 +13,13 @@
         
     .cursor {
         position: fixed;
-        background-blend-mode: overlay;
         transform: translate(-50%, -50%);
         filter: blur(20px);
         mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
-        -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));        
-        clip-path: circle();        
+        -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));         
         animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
         transition: 0.8s linear;
+        clip-path: circle();
     }
     #shadow1{
         width: 1000px;
@@ -50,8 +49,6 @@
     
     #mainCursor {
         position: fixed;
-        display: block;
-        transform: translate(-50%, -50%);
         width: 1px;
         height: 1px;
         border-radius: 50%;
@@ -62,7 +59,6 @@
     }
     
     body {
-        width: 100%;
         margin: 0;
         padding: 0;
         cursor: none;
@@ -144,25 +140,13 @@
     }
 
     @keyframes pulse {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.6;
-        }
-        100% {
-            opacity: 1;
-        }
+        0%   {opacity: 1;  }
+        50%  {opacity: 0.6;}
+        100% {opacity: 1;  }
     }
 
     @keyframes pulse1 {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.9;
-        }
-        100% {
-            opacity: 1;
-        }
+        0%   { opacity: 1;   }
+        50%  { opacity: 0.9; }
+        100% { opacity: 1;   }
     }

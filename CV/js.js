@@ -58,7 +58,7 @@ for (let i = 0; i < shadowList.length; i++) {
         height: 100px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
-        `
+        `;
     })
 
     document.addEventListener("onload", myFunction());
@@ -66,7 +66,7 @@ for (let i = 0; i < shadowList.length; i++) {
         shadowList[i].style.cssText =`
         width: 0px;
         height: 0px;
-        `
+        `;
     }
 };
   
