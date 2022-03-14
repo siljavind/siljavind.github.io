@@ -20,16 +20,51 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-const cursorList = document.querySelectorAll(".cursor");
-for (let i = 0; i < cursorList.length; i++) {
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+const shadowList = document.querySelectorAll(".cursor");
+
+for (let i = 0; i < allCursorList.length; i++) {
     document.addEventListener('mousemove', (e) => {
-        cursorList[i].style.cssText = `
+        allCursorList[i].style.cssText = `
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `;        
+    });
+};
+
+for (let i = 0; i < shadowList.length; i++) {
+
+    document.addEventListener('mousedown', (e) => {
+        shadowList[i].style.cssText = `
+        width: ${shadowList[i].clientWidth + 1000}px;
+        height: ${shadowList[i].clientHeight + 1000}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
-    });      
-}
+    });        
+
+    document.addEventListener('mouseup', (e) => {
+        shadowList[i].style.cssText = `
+        width: ${shadowList[i].clientWidth - 1000}px;
+        height: ${shadowList[i].clientHeight -1000}px;
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `;
+    });
     
+    document.addEventListener('mouseleave', (e) => {
+        shadowList[i].style.cssText = `
+        width: 50px;
+        height: 50px;
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `
+    })
+
+    shadowList[i].onload = 
+};
+  
+
 
 /*function changeWidth(i) { SO SMART BUT NO 
 

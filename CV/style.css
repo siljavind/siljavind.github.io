@@ -3,43 +3,34 @@
         font-family: ArtDecoFont;
         color: black;
         background-color: black;
-        
+        user-select: none;
     }
     
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
     }
-    
-    
+        
     .cursor {
         position: fixed;
-        display: block;
+        background-blend-mode: overlay;
         transform: translate(-50%, -50%);
-        filter: blur(100px);
+        filter: blur(20px);
         mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
         -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));        
-        clip-path: circle();
-        
-    }
-    #mainCursor {
-        width: 1px;
-        height: 1px;
-        border-radius: 50%;
-        border: 2px solid black;
-        filter: none;
-        mask-image: none;
-        -webkit-mask-image: none;
+        clip-path: circle();        
+        animation: width 1s ease-out, height 5s ease-out;
+        transition: 0.8s linear;
     }
     #shadow1{
         width: 2000px;
         height: 2000px;
-        background: radial-gradient(red,  black,transparent);
+        background: radial-gradient(red,  black, transparent);
 
     }
     #shadow2{
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 600px;
         background: radial-gradient(orange, transparent, transparent);
 
     }
@@ -52,12 +43,26 @@
         width: 200px;
         height: 200px;
         background: radial-gradient(white, transparent, transparent);
+    }    
+    
+    #mainCursor {
+        position: fixed;
+        display: block;
+        transform: translate(-50%, -50%);
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        border: 2px solid white;
+        filter: none;
+        mask-image: none;
+        -webkit-mask-image: none;
     }
+    
     body {
         width: 100%;
         margin: 0;
         padding: 0;
-        cursor: none;
+        /*cursor: none;*/
     }
     
     .scroller {
@@ -127,7 +132,7 @@
     }
     
     .startText {
-        grid-area: 4 / 1 / span 10;
+        grid-area: 4 / 1 ;
     }
     
     .contact {
