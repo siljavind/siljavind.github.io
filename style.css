@@ -2,7 +2,7 @@
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
         color: black;
-        background-color: white;
+        background-color: black;
         user-select: none;
     }
     
@@ -126,14 +126,6 @@
     
     #bWat {
         grid-area: 1 / 1 / span 1 / span 8;
-    }
-    
-    #bDayNight {
-        float: inline-end;
-        width: 100px;
-        height: 100px;
-        position: sticky;
-        border: 2px solid black;
     }
     
     .logo {
