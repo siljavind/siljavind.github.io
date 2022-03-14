@@ -54,14 +54,20 @@ for (let i = 0; i < shadowList.length; i++) {
     
     document.addEventListener('mouseleave', (e) => {
         shadowList[i].style.cssText = `
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `
     })
 
-    shadowList[i].onload = 
+    document.addEventListener("onload", myFunction());
+    function myFunction() {
+        shadowList[i].style.cssText =`
+        width: 0px;
+        height: 0px;
+        `
+    }
 };
   
 
