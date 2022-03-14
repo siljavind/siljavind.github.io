@@ -6,6 +6,12 @@
         user-select: none;
     }
     
+    body {
+        margin: 0;
+        padding: 0;
+        cursor: none;
+    }
+    
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
@@ -20,6 +26,18 @@
         animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
         transition: 0.8s linear;
         clip-path: circle();
+    }
+    
+    #mainCursor {
+        position: fixed;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        border: 0.1px solid rgb(0, 0, 0);
+        filter: none;
+        mask-image: none;
+        -webkit-mask-image: none;
     }
     
     #shadow1 {
@@ -48,24 +66,6 @@
         height: 200px;
         background: radial-gradient(white, transparent, transparent);
         animation-delay: 6s;
-    }
-    
-    #mainCursor {
-        position: fixed;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        border: 0.1px solid rgb(0, 0, 0);
-        filter: none;
-        mask-image: none;
-        -webkit-mask-image: none;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        cursor: none;
     }
     
     .scroller {
