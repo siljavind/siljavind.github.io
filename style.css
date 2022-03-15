@@ -2,14 +2,14 @@
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
         color: black;
-        background-color: white;
+        background-color: black;
         user-select: none;
     }
     
     body {
         margin: 0;
         padding: 0;
-        /*cursor: none;*/
+        cursor: none;
     }
     
     @font-face {
@@ -94,7 +94,7 @@
         display: grid;
         grid-template-rows: repeat(4, 10vh) 55vh 5vh;
         grid-template-columns: repeat(3, 25px) repeat(4, 0px);
-        /*top: 0;*/
+        top: 0;
     }
     
     .menu {
@@ -135,6 +135,7 @@
         margin-left: 5px;
         border: 1px solid black;
         border-radius: 15px;
+        background: transparent;
     }
 
     #buttonLight {
@@ -147,16 +148,7 @@
         border-radius: 15px;
         transition: .7s ease;  
     }
-    #buttonLight:after {
-        content: "";
-        width: 30px;
-    }
 
-    #buttonLight:active:after {
-        width: 30px;
-    }
-
-    
     .logo {
         grid-area: 2 / 1;
         width: 100%;

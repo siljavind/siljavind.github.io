@@ -32,11 +32,11 @@ function lightOn(i) {
         button.style.cssText = `
         margin-left: 10px;
         `;
-    }
+    };
 };
- 
 
-/*const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
@@ -86,4 +86,4 @@ for (let i = 0; i < shadowList.length; i++) {
         height: ${shadowList[i].clientHeight = 1}px;
         `;
     }
-};*/
+};
