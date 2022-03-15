@@ -34,9 +34,7 @@ function lightOn(i) {
         `;
     }
 };
-     
-    
-    
+ 
 
 /*const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");

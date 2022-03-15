@@ -147,10 +147,13 @@
         border-radius: 15px;
         transition: .7s ease;  
     }
-
-    #buttonLight:active {
+    #buttonLight:after {
+        content: "";
         width: 30px;
-        transform: width .7s ease-out;
+    }
+
+    #buttonLight:active:after {
+        width: 30px;
     }
 
     
