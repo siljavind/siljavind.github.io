@@ -2,7 +2,7 @@
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
         color: black;
-        background-color: black;
+        background-color: white;
         user-select: none;
     }
     
@@ -131,7 +131,7 @@
     #borderLight {
         grid-area: 6 / 1;
         width: 70px;
-        height: 24px;
+        height: 26px;
         margin-left: 5px;
         border: 1px solid black;
         border-radius: 15px;
@@ -141,22 +141,18 @@
         grid-area: 6 / 1;
         width: 20px;
         height: 20px;
-        margin-top: 2px;
-        margin-left: 7px;
+        margin: 3px 0px 3px 10px;
         background: black;
         border: 1px solid black;
         border-radius: 15px;
-        transition: .7s ease;
-        animation: slide .7s;
-        animation-play-state: paused;
-        animation-iteration-count: 0;      
+        transition: .7s ease;  
     }
-    
-    @keyframes slide {
-        0%  { width: 20px;}
-        50% { width: 30px;}
-        100%{ width: 20px;}
+
+    #buttonLight:active {
+        width: 30px;
+        transform: width .7s ease-out;
     }
+
     
     .logo {
         grid-area: 2 / 1;

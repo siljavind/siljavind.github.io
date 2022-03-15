@@ -23,24 +23,22 @@ function lightOn(i) {
     let button = document.getElementById(i);
     let style = button.currentStyle || window.getComputedStyle(button);
 
-    if (style.marginLeft == '7px') {
+    if (style.marginLeft == '10px') {
        button.style.cssText = `
-        margin-left: 53px;
-        animation-play-state: running;
-        animation-iteration-count: ${style.animationIterationCount + 1};`;
+        margin-left: 50px;
+        `;
     }
     else {
         button.style.cssText = `
-        margin-left: 7px;
-        animation-play-state: running;
-        animation-iteration-count: ${style.animationIterationCount + 1}`;
+        margin-left: 10px;
+        `;
     }
 };
      
     
     
 
-const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+/*const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
@@ -90,4 +88,4 @@ for (let i = 0; i < shadowList.length; i++) {
         height: ${shadowList[i].clientHeight = 1}px;
         `;
     }
-};
+};*/
