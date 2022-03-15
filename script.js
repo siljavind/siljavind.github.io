@@ -9,21 +9,42 @@ window.onscroll = () => {
         ".scroller"
     ).style.background = `linear-gradient(to bottom, #000 ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
 
-}
+};
 
 function watHeyo(i) {
     document.getElementById(i).innerHTML = "Heyo";
-}
+};
 
 function getElmt(i) {
-    const elmt = document.getElementById(i);
-    elmt.scrollIntoView();
-}
+    document.getElementById(i).scrollIntoView;
+};
 
-/*const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+function lightOn(i) {
+    let button = document.getElementById(i);
+    let style = button.currentStyle || window.getComputedStyle(button);
+
+    if (style.marginLeft == '7px') {
+       button.style.cssText = `
+        margin-left: 53px;
+        animation-play-state: running;
+        animation-iteration-count: ${style.animationIterationCount + 1};`;
+    }
+    else {
+        button.style.cssText = `
+        margin-left: 7px;
+        animation-play-state: running;
+        animation-iteration-count: ${style.animationIterationCount + 1}`;
+    }
+};
+     
+    
+    
+
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
+    
     document.addEventListener('mousemove', (e) => {
         allCursorList[i].style.cssText = `
         left: ${e.clientX}px;
@@ -36,8 +57,8 @@ for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mousedown', (e) => {
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth + 1000}px;
-        height: ${shadowList[i].clientHeight + 1000}px;
+        width: ${shadowList[i].clientWidth = Math.max(1500)}px;
+        height: ${shadowList[i].clientHeight = Math.max(1500)}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
@@ -45,8 +66,8 @@ for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mouseup', (e) => {
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth - 1000}px;
-        height: ${shadowList[i].clientHeight - 1000}px;
+        width: ${shadowList[i].clientWidth == 1000}px;
+        height: ${shadowList[i].clientHeight == 1000}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
@@ -54,8 +75,8 @@ for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mouseleave', (e) => {
         shadowList[i].style.cssText = `
-        width: 0px;
-        height: 0px;
+        width: ${shadowList[i].clientWidth = 1}px;
+        height: ${shadowList[i].clientHeight = 1}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
@@ -65,8 +86,8 @@ for (let i = 0; i < shadowList.length; i++) {
 
     function onLoad() {
         shadowList[i].style.cssText = `
-        width: 0px;
-        height: 0px;
+        width: ${shadowList[i].clientWidth = 1}px;
+        height: ${shadowList[i].clientHeight = 1}px;
         `;
     }
-};*/
+};
