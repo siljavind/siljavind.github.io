@@ -2,14 +2,14 @@
         scroll-behavior: smooth;
         font-family: ArtDecoFont;
         color: black;
-        background-color: black;
+        background-color: white;
         user-select: none;
     }
     
     body {
         margin: 0;
         padding: 0;
-        cursor: none;
+        /*cursor: none;*/
     }
     
     @font-face {
@@ -92,7 +92,7 @@
         position: sticky;
         float: left;
         display: grid;
-        grid-template-rows: repeat(4, 100px);
+        grid-template-rows: repeat(4, 10vh) 55vh 5vh;
         grid-template-columns: repeat(3, 25px) repeat(4, 0px);
         top: 0;
     }
@@ -126,6 +126,15 @@
     
     #bWat {
         grid-area: 1 / 1 / span 1 / span 8;
+    }
+
+    #bLight {
+        grid-area: 6 / 1;
+        width: 69px;
+        height: 25px;
+        margin-left: 6px;
+        border: 1px solid black;
+        border-radius: 15px;
     }
     
     .logo {

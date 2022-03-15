@@ -20,7 +20,7 @@ function getElmt(i) {
     elmt.scrollIntoView();
 }
 
-const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+/*const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
@@ -69,21 +69,4 @@ for (let i = 0; i < shadowList.length; i++) {
         height: 0px;
         `;
     }
-};
-
-
-
-/*function changeWidth(i) { SO SMART BUT NO 
-
-    let elmt = document.getElementById(i);
-    
-    elmt.addEventListener("mouseover", mouseOver);
-    elmt.addEventListener("mouseout", mouseOut);
-
-    function mouseOver() {
-        elmt.style.width = "350%";
-    }
-    function mouseOut() {
-        elmt.style.width = "300%";
-    }
-}*/
+};*/
