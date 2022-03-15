@@ -128,23 +128,23 @@
         grid-area: 1 / 1 / span 1 / span 8;
     }
 
-    #borderLight {
+    #lightSwitchBorder {
         grid-area: 6 / 1;
-        width: 70px;
+        width: 60px;
         height: 26px;
         margin-left: 5px;
-        border: 1px solid black;
+        border: 2px solid rgb(10, 10, 10);
         border-radius: 15px;
         background: transparent;
     }
 
-    #buttonLight {
+    #lightSwitch {
         grid-area: 6 / 1;
         width: 20px;
         height: 20px;
         margin: 3px 0px 3px 10px;
-        background: black;
-        border: 1px solid black;
+        background: rgb(10, 10, 10);
+        border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
         transition: .7s ease;  
     }

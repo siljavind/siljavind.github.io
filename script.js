@@ -16,21 +16,29 @@ function watHeyo(i) {
 };
 
 function getElmt(i) {
-    document.getElementById(i).scrollIntoView;
+    document.getElementById(i).scrollIntoView();
 };
 
-function lightOn(i) {
-    let button = document.getElementById(i);
-    let style = button.currentStyle || window.getComputedStyle(button);
+function lightSwitch(i) {
+    let lightSwitch = document.getElementById(i);
+    let style = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
     if (style.marginLeft == '10px') {
-       button.style.cssText = `
-        margin-left: 50px;
+       lightSwitch.style.cssText = `
+        margin-left: 40px;
+        background-color: white;
         `;
+        document.body.style.cssText = `
+        background-color: white;
+        `;        
     }
     else {
-        button.style.cssText = `
+        lightSwitch.style.cssText = `
         margin-left: 10px;
+        background-color: rgb(10, 10, 10);
+        `;
+        document.body.style.cssText = `
+        background-color: black;
         `;
     };
 };
