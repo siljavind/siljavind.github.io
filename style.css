@@ -11,10 +11,21 @@
         padding: 0;
         /*cursor: none;*/
     }
-    svg{
-        position: absolute;
+    
+    svg {
+        position: fixed;
         display: block;
+        overflow: visible; 
     }
+
+    #svgBlack {
+        width: 50%;
+    }
+
+    #svgPink{
+        width: 60%;
+    }
+
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)

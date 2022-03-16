@@ -43,8 +43,7 @@ function lightSwitch(i) {
     };
 };
 
-
-const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+const allCursorList = document.querySelectorAll("svg, #mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
@@ -56,6 +55,7 @@ for (let i = 0; i < allCursorList.length; i++) {
         `;
     });
 };
+
 
 for (let i = 0; i < shadowList.length; i++) {
 
