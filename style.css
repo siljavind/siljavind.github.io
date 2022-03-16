@@ -12,25 +12,44 @@
         /*cursor: none;*/
     }
     
-   
     svg {
-        width: 100vw;
-        height: 100vh;
+        position: fixed;
         display: block;
-        justify-content: center;
-        overflow: visible;
+        transform: 2s;
+        animation: 2s;
+        transition: 2s;
     }
-
-    #shape1{
-        width: 80%;
-        height: 80%;
-    }
-
-    #svgPink{
+    
+    #target1 {
         width: 100%;
         height: 100%;
+        fill: red;
     }
-
+    
+    #target2 {
+        width: 80%;
+        height: 80%;
+        fill: orange;
+    }
+    
+    #target3 {
+        width: 60%;
+        height: 60%;
+        fill: hotpink;
+    }
+    
+    #target4 {
+        width: 40%;
+        height: 40%;
+        fill: blue;
+    }
+    
+    #target5 {
+        width: 20%;
+        height: 20%;
+        fill: green;
+    }
+    
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
@@ -59,7 +78,6 @@
         mask-image: none;
         -webkit-mask-image: none;
     }
-    
     /*#shadow1 {
         width: 1000px;
         height: 1000px;
@@ -147,7 +165,7 @@
     #bWat {
         grid-area: 1 / 1 / span 1 / span 8;
     }
-
+    
     #lightSwitchBorder {
         grid-area: 6 / 1;
         width: 60px;
@@ -157,7 +175,7 @@
         border-radius: 15px;
         background: transparent;
     }
-
+    
     #lightSwitch {
         grid-area: 6 / 1;
         width: 20px;
@@ -166,9 +184,9 @@
         background: rgb(10, 10, 10);
         border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
-        transition: .7s ease;  
+        transition: .7s ease;
     }
-
+    
     .logo {
         grid-area: 2 / 1;
         width: 100%;
