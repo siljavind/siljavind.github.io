@@ -18,19 +18,22 @@ path.setAttributeNS(null, 'd', blob1);
 path.setAttributeNS(null, 'fill', "yellow");
 svgElem.appendChild(path);
 
-let interpolator;
+{let interpolator;
 path.addEventListener('mousedown', () =>{
     if (path = blob1) {
         interpolator = flubber.interpolate(blob1, blob2)
+        d3.select("path").transition().attrTween('d', function(){return interpolator;})
     }
     else if (path = blob2) {
         interpolator = flubber.interpolate(blob2, blob3)
+        d3.select("path").transition().attrTween('d', function(){return interpolator;})
     }
     else {
         interpolator = flubber.interpolate(blob3, blob1)
+        d3.select("path").transition().attrTween('d', function(){return interpolator;})
     }
-    d3.select("path").transition().attrTween('d', function(){return interpolator;})
-})
+    
+})}
 
 
 
