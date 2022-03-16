@@ -7,25 +7,6 @@ const blob3 = "M24.7 -35.8C40.5 -33.8 67.4 -44.1 71.2 -40.2C74.9 -36.3 55.5 -18.
 const svgList = document.querySelectorAll("#target1, #target2, #target3, #target4, #target5");
 
 for (let i = 0; i < svgList.length; i++) {
-    const dList = svgList[i].getAttribute('d');
-
-    if (dList[i] = "") {
-        svgList[i].setAttribute('d', blob1)
-    };
-    if (dList[i] = blob1) {
-        svgList[i].setAttribute('d', blob2)
-    };
-    if (dList[i] = blob2) {
-        svgList[i].setAttribute('d', blob3)
-    };
-    if (dList[i] = blob3) {
-        svgList[i].setAttribute('d', blob1)
-    };
-
-};
-
-
-for (let i = 0; i < svgList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
         svgList[i].style.cssText = `
@@ -34,6 +15,26 @@ for (let i = 0; i < svgList.length; i++) {
         `;
     });
 };
+for (let i = 0; i < svgList.length; i++) {
+    const dList = svgList[i].getAttribute('d');
+
+    if (dList[i] = "") {
+        svgList[i].setAttributeNS(null, 'd', blob1)
+    };
+    if (dList[i] = blob1) {
+        svgList[i].setAttributeNS(null, 'd', blob2)
+    };
+    if (dList[i] = blob2) {
+        svgList[i].setAttributeNS(null, 'd', blob3)
+    };
+    if (dList[i] = blob3) {
+        svgList[i].setAttributeNS(null, 'd', blob1)
+    };
+
+};
+console.log(target1);
+
+
 
 window.onscroll = () => {
     let scrollTop = window.scrollY;
