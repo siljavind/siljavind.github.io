@@ -10,28 +10,35 @@
 </head>
 
 <body>
-
-    <div class="cursor" id="shadow1"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/flubber@0.3.0"></script>
+    
+    <!--<div class="cursor" id="shadow1"></div>
     <div class="cursor" id="shadow2"></div>
     <div class="cursor" id="shadow3"></div>
     <div class="cursor" id="shadow4"></div>
     <div id="mainCursor"></div>
 
-    <svg class="defs">
+    <div id="svgObj">
+        <svg1 width="500" height="500" viewBox="0 0 700 700">
+            <path id="target"/>
+        </svg1>
+    </div>
+
+    <svg1 class="defs">
         <defs>
             <filter id="f1"> 
                 <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
             </filter>
         </defs> 
-    </svg>
+    </svg1>
 
-    <svg id="svgPink" viewBox="125 0 250 250" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#a04bcb"  filter="url(#f1)" d="M35.3,-40.8C48.4,-31.1,63.4,-22.5,62,-13.5C60.6,-4.5,42.7,4.9,33.6,18.3C24.5,31.7,24.4,49,15.2,60.6C6,72.1,-12.2,77.8,-23.2,70.8C-34.2,63.7,-37.9,43.9,-46.9,27.5C-55.8,11.1,-70,-1.9,-70.6,-15C-71.3,-28.1,-58.5,-41.3,-44.5,-50.9C-30.5,-60.5,-15.3,-66.4,-2.1,-63.9C11.1,-61.4,22.2,-50.5,35.3,-40.8Z" />
-    </svg>
+   
 
-    <svg id="svgBlack" viewBox="125 0 250 250" xmlns="http://www.w3.org/2000/svg">          
+    <svg1 id="svgBlack" viewBox="125 0 250 250" xmlns="http://www.w3.org/2000/svg">          
         <path fill="#db4159" filter="url(#f1)" d="M35.3,-40.8C48.4,-31.1,63.4,-22.5,62,-13.5C60.6,-4.5,42.7,4.9,33.6,18.3C24.5,31.7,24.4,49,15.2,60.6C6,72.1,-12.2,77.8,-23.2,70.8C-34.2,63.7,-37.9,43.9,-46.9,27.5C-55.8,11.1,-70,-1.9,-70.6,-15C-71.3,-28.1,-58.5,-41.3,-44.5,-50.9C-30.5,-60.5,-15.3,-66.4,-2.1,-63.9C11.1,-61.4,22.2,-50.5,35.3,-40.8Z"/>
-    </svg>   
+    </svg1>   -->
+    
 
     <div class="scroller"></div>    
 
@@ -63,9 +70,9 @@
         </div>
 
     </div>
-
+   
     <script src="/script.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
 </body>
 
 </html>
