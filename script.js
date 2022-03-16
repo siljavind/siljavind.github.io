@@ -43,7 +43,19 @@ function lightSwitch(i) {
     };
 };
 
-const allCursorList = document.querySelectorAll("svg, #mainCursor, .cursor");
+const svgList = document.querySelectorAll("svg");
+
+for (let i = 0; i < svgList.length; i++) {
+    
+    document.addEventListener('mousemove', (e) => {
+        svgList[i].style.cssText = `
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `;
+    });
+};
+
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
