@@ -14,32 +14,28 @@
     
     svg {
         position: fixed;
-        display: block;
+        display: inline-block;
+        filter: url("#f1");
     }
     
     #target1 {
-   
         fill: red;
     }
     
     #target2 {
-   
         fill: orange;
     }
     
     #target3 {
-
         fill: hotpink;
     }
     
     #target4 {
-
         fill: blue;
     }
     
     #target5 {
- 
-        fill: green;
+         fill: green;
     }
     
     @font-face {
@@ -122,7 +118,7 @@
         position: sticky;
         float: left;
         display: grid;
-        grid-template-rows: repeat(4, 10vh) 45vh 5vh;
+        grid-template-rows: repeat(4, 10vh) 55vh 5vh;
         grid-template-columns: repeat(3, 25px) repeat(4, 0px);
         top: 0;
     }
