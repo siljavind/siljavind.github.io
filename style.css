@@ -16,7 +16,6 @@
         position: fixed;
         display: inline-block;
         filter: url("#f1");
-        animation: 2s;
     }
     
     @font-face {

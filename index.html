@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/flubber@0.3.0"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <!--<div class="cursor" id="shadow1"></div>
     <div class="cursor" id="shadow2"></div>
@@ -17,27 +19,21 @@
     <div class="cursor" id="shadow4"></div>
     <div id="mainCursor"></div>-->
 
-
-
-
-
-    <svg>
+    <svg width="100%" height="100%"></svg>
+    <!--<svg>
         <filter id="f1">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
         </filter>
     </svg>
+    <svg height="1000" width="1000">
+        <path id="target1" d="" fill="red" />
+        <path id="target2" d="" fill="orange" />
+        <path id="target3" d="" fill="yellow" />
+        <path id="target4" d="" fill="green" />
+        <path id="target5" d="" fill="blue" />
+        <path id="target6" d="" fill="purple" />
+    </svg> -->
 
-    <svg viewBox="0 0 500 500" height="1000" width="1000"><path id="target1"  d="" fill="red" /></svg>
-
-    <svg viewBox="0 0 500 500" width="750" height="750"><path id="target2"  d="" fill="orange" /></svg>
-
-    <svg viewBox="0 0 500 500" width="600" height="600"><path id="target3" d="" fill="yellow" /></svg>
-
-    <svg viewBox="0 0 500 500" width="450" height="450"><path id="target4" d="" fill="green" /></svg>
-
-    <svg viewBox="0 0 500 500" width="300" height="300"><path id="target5" d="" fill="blue" /></svg>
-
-    <svg viewBox="0 0 500 500" width="150" height="150"><path id="target6" d="" fill="purple" /></svg>
 
     <div class="scroller"></div>
 
