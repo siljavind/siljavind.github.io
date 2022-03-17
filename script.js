@@ -1,10 +1,10 @@
 const triangle = "M150 0 L75 200 L225 200 Z";
 const squiggle = "M20 230 Q40 205 50 230 T90 230";
-const triangle1 = "M150 0 L75 20 L225 200 Z";
+const fuckedtriangle = "M150 0 L75 24 L225 200 Z";
 
 
 
-const svgList = document.querySelectorAll("#target1, #target2, #target3, #target4, #target5");
+let svgList = document.querySelectorAll("#target1, #target2, #target3, #target4, #target5");
 
 
 for (let i = 0; i < svgList.length; i++) {
@@ -13,19 +13,19 @@ for (let i = 0; i < svgList.length; i++) {
         let dList = svgList[i].getAttribute('d');
         console.log(dList);
 
-        if (dList = "") {
+        if (dList === "") {
             svgList[i].setAttribute('d', triangle);
             console.log(dList);
 
-        } else if (dList = triangle) {
+        } else if (dList === triangle) {
             svgList[i].setAttribute('d', squiggle);
             console.log(dList);
 
-        } else if (dList = squiggle) {
-            svgList[i].setAttribute('d', triangle1);
+        } else if (dList === squiggle) {
+            svgList[i].setAttribute('d', fuckedtriangle);
             console.log(dList);
 
-        } else if (dList = triangle1) {
+        } else if (dList === fuckedtriangle) {
             svgList[i].setAttribute('d', triangle);
             console.log(dList);
         }
