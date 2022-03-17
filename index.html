@@ -16,36 +16,40 @@
     <div class="cursor" id="shadow3"></div>
     <div class="cursor" id="shadow4"></div>
     <div id="mainCursor"></div>-->
+    
+    
+  
+       
+    
+    <svg>
+        <filter id="f1">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+        </filter>
+    </svg>
 
-
-    <svg xls viewBox="0 0 500 500" width="1000" height="1000">
-        <path id="target1" d=""/>
+    <svg viewBox="0 0 500 500" width="1000" height="1000">        
+        <path id="target1" d="" filter="url(#f1)" />
     </svg>
 
     <svg viewBox="0 0 500 500" width="800" height="800">
-    <path id="target2" d="" />
+    <path id="target2" d="" filter="url(#f1)"/>
     </svg>
 
     <svg viewBox="0 0 500 500" width="600" height="600">
-        <path id="target3" d=""/>
+        <path id="target3" d="" filter="url(#f1)"/>
     </svg>
 
     <svg viewBox="0 0 500 500" width="400" height="400">
-        <path id="target4" d=""/>
+        <path id="target4" d="" filter="url(#f1)"/>
     </svg>
 
     <svg viewBox="0 0 500 500" width="200" height="200">
-        <path id="target5" d=""/>
+        <path id="target5" d="" filter="url(#f1)"/>
     </svg>
 
 
-    <svg class="defs">
-        <defs>
-            <filter id="f1">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
-            </filter>
-        </defs>
-    </svg>
+    
+        
 
 
     <div class="scroller"></div>
