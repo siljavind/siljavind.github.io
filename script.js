@@ -28,11 +28,11 @@ animate();
 
 function animate() {
     let nextBlobs = randomBlobs(currentBlobs.length),
-        interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false });
+        interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false }); /*match: false = blobs can't be a match*/
 
     currentBlobs = nextBlobs;
 
-    paths
+    paths /*add onmovemove*/
         .data(interpolators)
         .transition()
         .delay(20)
@@ -47,7 +47,6 @@ function animate() {
 }
 
 function randomBlobs(numOfBlobs) {
-    console.log(randomBlob);
     return d3.range(numOfBlobs).map(randomBlob);
 
 }
