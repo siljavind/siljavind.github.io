@@ -1,5 +1,5 @@
 const triangle = "M150 0 L75 200 L225 200 Z";
-const square = "M20,230 Q40,205 50,230 T90,230";
+const squiggle = "M20,230 Q40,205 50,230 T90,230";
 const triangle1 = "M150 1 1 L 5 5 L 5 1 L 1 1";
 
 
@@ -13,16 +13,17 @@ for (let i = 0; i < svgList.length; i++) {
         let dList = svgList[i].getAttribute('d');
 
         console.log(dList[i]);
+        console.log[i]
 
         if (dList[i] = "") {
-            svgList[i].setAttributeNS(null, 'd', triangle);
-            return;
+            return svgList[i].setAttributeNS(null, 'd', triangle);
+
         };
         if (dList[i] = triangle) {
-            svgList[i].setAttributeNS(null, 'd', square);
+            svgList[i].setAttributeNS(null, 'd', squiggle);
             return;
         };
-        if (dList[i] = square) {
+        if (dList[i] = squiggle) {
             svgList[i].setAttributeNS(null, 'd', triangle1);
             return;
         };
