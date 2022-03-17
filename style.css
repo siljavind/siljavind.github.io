@@ -18,26 +18,9 @@
         filter: url("#f1");
     }
     
-    #target1 {
-        fill: red;
-    }
     
-    #target2 {
-        fill: orange;
-    }
     
-    #target3 {
-        fill: hotpink;
-    }
-    
-    #target4 {
-        fill: blue;
-    }
-    
-    #target5 {
-         fill: green;
-    }
-    
+
     @font-face {
         font-family: ArtDecoFont;
         src: url(/assets/Semplicita/Semplicita\ Light.otf)
