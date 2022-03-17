@@ -1,6 +1,6 @@
 const triangle = "M150 0 L75 200 L225 200 Z";
-const squiggle = "M20,230 Q40,205 50,230 T90,230";
-const triangle1 = "M150 1 1 L 5 5 L 5 1 L 1 1";
+const squiggle = "M20 230 Q40 205 50 230 T90 230";
+const triangle1 = "M150 0 L75 20 L225 200 Z";
 
 
 
@@ -11,28 +11,30 @@ for (let i = 0; i < svgList.length; i++) {
 
     document.addEventListener('mousedown', () => {
         let dList = svgList[i].getAttribute('d');
+        console.log(dList);
 
-        console.log(dList[i]);
-        console.log[i]
+        if (dList = "") {
+            svgList[i].setAttribute('d', triangle);
+            console.log(dList);
 
-        if (dList[i] = "") {
-            return svgList[i].setAttributeNS(null, 'd', triangle);
+        } else if (dList = triangle) {
+            svgList[i].setAttribute('d', squiggle);
+            console.log(dList);
 
-        };
-        if (dList[i] = triangle) {
-            svgList[i].setAttributeNS(null, 'd', squiggle);
-            return;
-        };
-        if (dList[i] = squiggle) {
-            svgList[i].setAttributeNS(null, 'd', triangle1);
-            return;
-        };
-        if (dList[i] = triangle1) {
-            svgList[i].setAttributeNS(null, 'd', triangle);
-            return;
-        };
+        } else if (dList = squiggle) {
+            svgList[i].setAttribute('d', triangle1);
+            console.log(dList);
+
+        } else if (dList = triangle1) {
+            svgList[i].setAttribute('d', triangle);
+            console.log(dList);
+        }
+
+        console.log(dList);
 
     });
+
+
 };
 
 
