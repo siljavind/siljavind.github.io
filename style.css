@@ -2,7 +2,7 @@
             scroll-behavior: smooth;
             font-family: ArtDecoFont;
             color: black;
-            background-color: black;
+            background-color: white;
             user-select: none;
         }
         
@@ -11,12 +11,11 @@
             padding: 0;
         }
         
-        svg {
+        svg, path {
             position: fixed;
             display: inline-block;
             /*filter: url("#f1");*/
             overflow: visible;
-            color: rgba(255, 105, 180, 0.7);
         }
         
         @font-face {
