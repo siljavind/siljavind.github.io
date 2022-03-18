@@ -13,7 +13,7 @@
 
 let svg = d3.select("svg"),
     currentBlobs = randomBlobs(4),
-    colors = ["rgba(128, 0, 128, 1)", "rgba(255, 105, 180, 0.7)", "rgba(255, 127, 80, 0.6)", "rgba(255, 68, 0, 0.2)"];
+    colors = ["rgba(128, 0, 128, 0.9)", "rgba(255, 105, 180, 0.7)", "rgba(255, 127, 80, 0.6)", "rgba(255, 68, 0, 0.3)"];
 
 let paths = svg
     .selectAll("path")
@@ -23,7 +23,6 @@ let paths = svg
     .style("fill", function(d, i) {
         return colors[i];
     })
-    .on()
     animate();
 
 function animate() {
@@ -35,8 +34,8 @@ function animate() {
     paths
         .data(interpolators)
         .transition()
-        .delay(2000)
-        .duration(5000)
+        .delay(0)
+        .duration(3000)
         .attrTween("d", function(d) {
             return d;
         })
