@@ -1,52 +1,52 @@
-    html {
-        scroll-behavior: smooth;
-        font-family: ArtDecoFont;
-        color: black;
-        background-color: white;
-        user-select: none;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        cursor: url();
-    }
-    
-    svg, path {
-        position: fixed;
-        display: inline-block;
-        /*filter: url("#f1");*/
-    }
-    
-    @font-face {
-        font-family: ArtDecoFont;
-        src: url(/assets/Semplicita/Semplicita\ Light.otf)
-    }
-    
-    .cursor {
-        position: fixed;
-        display: block;
-        transform: translate(-50%, -50%);
-        filter: blur(20px);
-        mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
-        -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
-        animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
-        transition: 0.8s linear;
-        clip-path: circle();
-    }
-    
-    #mainCursor {
-        position: fixed;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        border: 0.1px solid rgb(0, 0, 0);
-        filter: none;
-        mask-image: none;
-        -webkit-mask-image: none;
-    }
-    /*#shadow1 {
+        html {
+            scroll-behavior: smooth;
+            font-family: ArtDecoFont;
+            color: black;
+            background-color: black;
+            user-select: none;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        svg {
+            position: fixed;
+            display: inline-block;
+            /*filter: url("#f1");*/
+            overflow: visible;
+        }
+        
+        @font-face {
+            font-family: ArtDecoFont;
+            src: url(/assets/Semplicita/Semplicita\ Light.otf)
+        }
+        
+        .cursor {
+            position: fixed;
+            display: block;
+            transform: translate(-50%, -50%);
+            filter: blur(20px);
+            mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
+            -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
+            animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
+            transition: 0.8s linear;
+            clip-path: circle();
+        }
+        
+        #mainCursor {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            border: 0.1px solid rgb(0, 0, 0);
+            filter: none;
+            mask-image: none;
+            -webkit-mask-image: none;
+        }
+        /*#shadow1 {
         width: 1000px;
         height: 1000px;
         background: radial-gradient(red, black, transparent);
@@ -73,123 +73,123 @@
         background: radial-gradient(white, transparent, transparent);
         animation-delay: 6s;
     }*/
-    
-    .scroller {
-        position: fixed;
-        width: 1px;
-        height: 100%;
-        right: 25px;
-    }
-    
-     ::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
-    }
-    
-    .mainGrid {
-        position: relative;
-        display: grid;
-        grid-template-rows: 10px repeat(50, 100px);
-        grid-template-columns: auto;
-        margin: 0px 100px 0px 100px;
-    }
-    
-    .menuGrid {
-        position: sticky;
-        float: left;
-        display: grid;
-        grid-template-rows: repeat(4, 10vh) 55vh 5vh;
-        grid-template-columns: repeat(3, 25px) repeat(4, 0px);
-        top: 0;
-    }
-    
-    .menu {
-        width: 400%;
-        height: 23px;
-        margin-left: 25px;
-        padding: 1px 15px 0px 0px;
-        transform: rotate(90deg);
-        transform-origin: top left;
-        border: 1px solid black;
-        border-left: none;
-        border-top-right-radius: 15px;
-        text-align: right;
-        transition: width ease-out 500ms;
-        background-image: linear-gradient(to right, black, transparent 60%);
-    }
-    
-    .menu:hover {
-        width: 450%;
-    }
-    
-    #bHome {
-        grid-area: 1 / 3 / span 1 / span 4;
-    }
-    
-    #bContact {
-        grid-area: 1 / 2 / span 1 / span 6;
-    }
-    
-    #bWat {
-        grid-area: 1 / 1 / span 1 / span 8;
-    }
-    
-    #lightSwitchBorder {
-        grid-area: 6 / 1;
-        width: 60px;
-        height: 26px;
-        margin-left: 5px;
-        border: 2px solid rgb(10, 10, 10);
-        border-radius: 15px;
-        background: transparent;
-    }
-    
-    #lightSwitch {
-        grid-area: 6 / 1;
-        width: 20px;
-        height: 20px;
-        margin: 3px 0px 3px 10px;
-        background: rgb(10, 10, 10);
-        border: 1px solid rgb(10, 10, 10);
-        border-radius: 15px;
-        transition: .7s ease;
-    }
-    
-    .logo {
-        grid-area: 2 / 1;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .startText {
-        grid-area: 4 / 1;
-    }
-    
-    .contact {
-        grid-area: 30 / 1;
-        text-align: center;
-    }
-    
-    @keyframes pulse {
-        0% {
-            opacity: 1;
+        
+        .scroller {
+            position: fixed;
+            width: 1px;
+            height: 100%;
+            right: 25px;
         }
-        50% {
-            opacity: 0.6;
+        
+         ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
         }
-        100% {
-            opacity: 1;
+        
+        .mainGrid {
+            position: relative;
+            display: grid;
+            grid-template-rows: 10px repeat(50, 100px);
+            grid-template-columns: auto;
+            margin: 0px 100px 0px 100px;
         }
-    }
-    
-    @keyframes pulse1 {
-        0% {
-            opacity: 1;
+        
+        .menuGrid {
+            position: sticky;
+            float: left;
+            display: grid;
+            grid-template-rows: repeat(4, 10vh) 55vh 5vh;
+            grid-template-columns: repeat(3, 25px) repeat(4, 0px);
+            top: 0;
         }
-        50% {
-            opacity: 0.9;
+        
+        .menu {
+            width: 400%;
+            height: 23px;
+            margin-left: 25px;
+            padding: 1px 15px 0px 0px;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            border: 1px solid black;
+            border-left: none;
+            border-top-right-radius: 15px;
+            text-align: right;
+            transition: width ease-out 500ms;
+            background-image: linear-gradient(to right, black, transparent 60%);
         }
-        100% {
-            opacity: 1;
+        
+        .menu:hover {
+            width: 450%;
         }
-    }
+        
+        #bHome {
+            grid-area: 1 / 3 / span 1 / span 4;
+        }
+        
+        #bContact {
+            grid-area: 1 / 2 / span 1 / span 6;
+        }
+        
+        #bWat {
+            grid-area: 1 / 1 / span 1 / span 8;
+        }
+        
+        #lightSwitchBorder {
+            grid-area: 6 / 1;
+            width: 60px;
+            height: 26px;
+            margin-left: 5px;
+            border: 2px solid rgb(10, 10, 10);
+            border-radius: 15px;
+            background: transparent;
+        }
+        
+        #lightSwitch {
+            grid-area: 6 / 1;
+            width: 20px;
+            height: 20px;
+            margin: 3px 0px 3px 10px;
+            background: rgb(10, 10, 10);
+            border: 1px solid rgb(10, 10, 10);
+            border-radius: 15px;
+            transition: .7s ease;
+        }
+        
+        .logo {
+            grid-area: 2 / 1;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .startText {
+            grid-area: 4 / 1;
+        }
+        
+        .contact {
+            grid-area: 30 / 1;
+            text-align: center;
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse1 {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 1;
+            }
+        }

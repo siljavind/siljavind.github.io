@@ -1,13 +1,13 @@
-const blobList = ["M58.8,-22.9C64.6,-1.4,49.5,23,26.8,40.3C4.1,57.6,-26.3,67.7,-45.6,55.4C-64.9,43.1,-73.2,8.3,-63.8,-18.3C-54.3,-44.8,-27.2,-63.2,-0.3,-63.1C26.5,-63,53.1,-44.4,58.8,-22.9Z",
-    "M39.9,-12C45.5,4,39.3,24.8,22.1,39.5C4.9,54.1,-23.3,62.5,-36.9,52.3C-50.5,42.1,-49.5,13.2,-40.9,-7.1C-32.3,-27.3,-16.2,-38.9,0.5,-39.1C17.2,-39.3,34.4,-28,39.9,-12Z",
-    "M62.2,-25.4C68.5,-1.1,52.8,25.1,31.2,40.1C9.6,55.2,-18.1,59.1,-35.2,47C-52.3,34.9,-58.9,6.8,-51.3,-19.5C-43.6,-45.7,-21.8,-70.2,3.1,-71.2C28,-72.2,56,-49.8,62.2,-25.4Z"
+const blobList = ["M33.4,-42.2C44,-31,53.7,-21.1,61.3,-6.6C68.8,7.9,74.3,27,65.9,34.9C57.6,42.9,35.5,39.8,18.7,41.8C1.9,43.8,-9.6,50.9,-19.1,48.9C-28.6,47,-36,36,-45.2,24.2C-54.4,12.3,-65.3,-0.6,-67.2,-15.7C-69.1,-30.8,-62,-48.1,-49.3,-59C-36.6,-69.8,-18.3,-74.2,-3.4,-70.1C11.4,-66,22.9,-53.4,33.4,-42.2Z",
+    "M34.4,-39.7C45.8,-31.4,57.1,-21.7,64.6,-7.2C72.1,7.3,75.9,26.7,70,43.8C64.2,61,48.7,76,30.8,80.9C13,85.7,-7.2,80.4,-21.4,70.2C-35.5,60,-43.8,45,-53.4,30C-63.1,15,-74.2,0,-75,-16.3C-75.8,-32.6,-66.2,-50.1,-52,-57.8C-37.8,-65.6,-18.9,-63.6,-3.7,-59.1C11.5,-54.7,23,-47.9,34.4,-39.7Z",
+    "M53.4,-57C68.8,-50.8,80.5,-33.5,81.1,-16.3C81.8,0.9,71.4,18,61.2,35.1C51.1,52.1,41.2,69,28.1,71.1C15.1,73.2,-1.2,60.5,-20.7,54.5C-40.3,48.4,-63.1,49,-69.6,39.4C-76,29.8,-66.1,9.9,-59.4,-7.4C-52.7,-24.8,-49.2,-39.6,-39.8,-46.9C-30.5,-54.3,-15.2,-54,1.9,-56.3C19,-58.5,38,-63.3,53.4,-57Z",
+    "M30.9,-42.3C45.3,-32.1,65.9,-30.1,67.2,-22.7C68.4,-15.3,50.3,-2.4,38.7,6.2C27.1,14.8,22,19.1,16.7,30.7C11.3,42.3,5.7,61.3,-0.2,61.6C-6.2,62,-12.3,43.7,-22.7,33.7C-33.1,23.7,-47.8,22,-55.6,14.2C-63.4,6.5,-64.3,-7.4,-60.5,-19.9C-56.8,-32.5,-48.4,-43.8,-37.5,-55.2C-26.7,-66.5,-13.3,-78,-2.5,-74.5C8.2,-71,16.5,-52.5,30.9,-42.3Z",
+    "M41.6,-56.1C49,-51.8,46.9,-33.2,43.3,-19.9C39.6,-6.5,34.4,1.5,32,10.9C29.6,20.2,29.9,31,25.1,37C20.2,43.1,10.1,44.6,-4.1,50.2C-18.3,55.9,-36.6,65.7,-39,58.8C-41.3,51.9,-27.7,28.3,-28.4,12.5C-29.1,-3.3,-44.1,-11.3,-44.9,-16.4C-45.8,-21.6,-32.5,-24.1,-22.7,-27.6C-12.9,-31,-6.4,-35.5,5.3,-42.8C17.1,-50.2,34.1,-60.3,41.6,-56.1Z"
 ];
 
 let svg = d3.select("svg"),
-    width = 1000,
-    height = 1000,
-    currentBlobs = randomBlobs(3),
-    colors = ["blue", "purple", "hotpink"];
+    currentBlobs = randomBlobs(4),
+    colors = ["purple", "hotpink", "coral", "orangered"];
 
 let paths = svg
     .selectAll("path")
@@ -21,43 +21,34 @@ animate();
 
 function animate() {
     let nextBlobs = randomBlobs(currentBlobs.length),
-        interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false }); /*match: false = blobs can't be a match*/
+        interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false });
 
     currentBlobs = nextBlobs;
 
-    paths /*add onmovemove somehow maybe*/
+    paths
         .data(interpolators)
         .transition()
-        .delay(40)
-        .duration(1000)
+        .delay(30)
+        .duration(2000)
         .attrTween("d", function(d) {
             return d;
         })
-        .filter(function(d, i) {
+        .filter(function(d, i) { //loops end->start smoothly
             return !i;
-        })            
+        })
         .on("end", animate);
-}
-
-function randomBlobs(numOfBlobs) {
-    return d3.range(numOfBlobs).map(randomBlob);     
-}
-
-function randomBlob() {   
-        const random = Math.floor(Math.random() * blobList.length);
-        return blobList[random];
 };
 
-/*const svgList = document.querySelectorAll("path");
-console.log(svgList);
-for (let i = 0; i < svgList.length; i++) {
-    document.addEventListener('mousemove', (e) => {       
-        svgList[i].style.cssText = `
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
-    });
-};*/
+function randomBlobs(numOfBlobs) {
+    return d3.range(numOfBlobs).map(randomBlob);
+};
+
+function randomBlob() {
+    const random = Math.floor(Math.random() * blobList.length);
+    return blobList[random];
+};
+
+
 
 
 window.onscroll = () => {
@@ -105,7 +96,7 @@ function lightSwitch(i) {
 };
 
 
-const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor, #svgCursor");
 const shadowList = document.querySelectorAll(".cursor");
 
 for (let i = 0; i < allCursorList.length; i++) {
