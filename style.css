@@ -14,9 +14,11 @@
         svg, path {
             position: fixed;
             display: inline-block;
-            /*filter: url("#f1");*/
+            filter: url("#f1");
             overflow: visible;
+            
         }
+
         
         @font-face {
             font-family: ArtDecoFont;
