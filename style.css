@@ -9,13 +9,13 @@
     body {
         margin: 0;
         padding: 0;
-        /*cursor: none;*/
+        cursor: url();
     }
     
-    svg {
+    svg, path {
         position: fixed;
         display: inline-block;
-        filter: url("#f1");
+        /*filter: url("#f1");*/
     }
     
     @font-face {
