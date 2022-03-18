@@ -16,6 +16,7 @@
             display: inline-block;
             /*filter: url("#f1");*/
             overflow: visible;
+            color: rgba(255, 105, 180, 0.7);
         }
         
         @font-face {

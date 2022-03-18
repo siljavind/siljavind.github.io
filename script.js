@@ -7,7 +7,7 @@ const blobList = ["M33.4,-42.2C44,-31,53.7,-21.1,61.3,-6.6C68.8,7.9,74.3,27,65.9
 
 let svg = d3.select("svg"),
     currentBlobs = randomBlobs(4),
-    colors = ["purple", "hotpink", "coral", "orangered"];
+    colors = ["purple", "rgba(255, 105, 180, 0.7)", "rgba(255, 127, 80, 0.7)", "rgba(255, 68, 0, 0.7)"];
 
 let paths = svg
     .selectAll("path")
