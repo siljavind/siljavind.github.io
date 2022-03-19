@@ -1,12 +1,4 @@
 {
-    const shadowID = ["S1", "S2", "S3", "S4"]
-    for (let i = 0; i < 2; i++) {
-        d3.select("#shadowContainer").append("div").classed("cssCursor", true).attr("id", shadowID);
-    }
-
-
-
-
     const blobList = ["M33.4,-42.2C44,-31,53.7,-21.1,61.3,-6.6C68.8,7.9,74.3,27,65.9,34.9C57.6,42.9,35.5,39.8,18.7,41.8C1.9,43.8,-9.6,50.9,-19.1,48.9C-28.6,47,-36,36,-45.2,24.2C-54.4,12.3,-65.3,-0.6,-67.2,-15.7C-69.1,-30.8,-62,-48.1,-49.3,-59C-36.6,-69.8,-18.3,-74.2,-3.4,-70.1C11.4,-66,22.9,-53.4,33.4,-42.2Z",
         "M34.4,-39.7C45.8,-31.4,57.1,-21.7,64.6,-7.2C72.1,7.3,75.9,26.7,70,43.8C64.2,61,48.7,76,30.8,80.9C13,85.7,-7.2,80.4,-21.4,70.2C-35.5,60,-43.8,45,-53.4,30C-63.1,15,-74.2,0,-75,-16.3C-75.8,-32.6,-66.2,-50.1,-52,-57.8C-37.8,-65.6,-18.9,-63.6,-3.7,-59.1C11.5,-54.7,23,-47.9,34.4,-39.7Z",
         "M53.4,-57C68.8,-50.8,80.5,-33.5,81.1,-16.3C81.8,0.9,71.4,18,61.2,35.1C51.1,52.1,41.2,69,28.1,71.1C15.1,73.2,-1.2,60.5,-20.7,54.5C-40.3,48.4,-63.1,49,-69.6,39.4C-76,29.8,-66.1,9.9,-59.4,-7.4C-52.7,-24.8,-49.2,-39.6,-39.8,-46.9C-30.5,-54.3,-15.2,-54,1.9,-56.3C19,-58.5,38,-63.3,53.4,-57Z",
@@ -18,11 +10,10 @@
         "M27.2,-53.4C32.3,-44.2,31.5,-30.9,41.5,-21.4C51.6,-11.8,72.7,-5.9,74.1,0.8C75.5,7.5,57.2,15,49.9,29.4C42.6,43.8,46.2,65.1,39.7,70.7C33.2,76.3,16.6,66.2,6.1,55.6C-4.4,45.1,-8.9,34.1,-19.1,30.6C-29.4,27.2,-45.4,31.4,-51.7,27.5C-58.1,23.7,-54.6,11.8,-56,-0.8C-57.4,-13.4,-63.6,-26.9,-57.8,-31.5C-51.9,-36.1,-33.9,-31.9,-22.3,-37.3C-10.6,-42.6,-5.3,-57.6,2.9,-62.6C11.1,-67.6,22.1,-62.5,27.2,-53.4Z",
         "M29.5,-52.1C38.7,-45.7,47.2,-38.9,48.4,-30.2C49.6,-21.4,43.6,-10.7,45.9,1.4C48.3,13.4,59,26.9,57.5,35C55.9,43,41.9,45.8,30.3,53.5C18.7,61.2,9.3,73.9,0.2,73.5C-8.9,73.1,-17.7,59.6,-31.3,53C-45,46.4,-63.3,46.8,-74.1,39.1C-84.9,31.4,-88.1,15.7,-85.6,1.4C-83.2,-12.9,-75.2,-25.8,-66.5,-37.2C-57.8,-48.5,-48.5,-58.2,-37.3,-63.6C-26.1,-68.9,-13.1,-70,-1.5,-67.4C10.1,-64.8,20.2,-58.6,29.5,-52.1Z"
     ];
-    const colorList = ["rgba(128, 0, 128)", "rgba(255, 105, 180)", "rgba(255, 127, 80)", "rgba(255, 68, 0)"];
-
+    const colorList = ["rgba(128, 0, 128)", "rgba(255, 105, 180)", "rgba(255, 68, 0)"];
 
     let svg = d3.select("svg"),
-        currentBlobs = randomBlobs(4),
+        currentBlobs = randomBlobs(3),
         colors = colorList;
 
     let paths = svg
@@ -46,13 +37,14 @@
 
     function animate() {
         let nextBlobs = randomBlobs(currentBlobs.length),
-            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 5 });
+            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 15 });
 
         currentBlobs = nextBlobs;
 
         paths
             .data(interpolators)
             .transition()
+            .delay(0)
             .duration(5000)
             .attrTween("d", function(d) {
                 return d;
@@ -63,6 +55,11 @@
             .on("end", animate);
     };
 };
+
+const shadowID = ["S1", "S2", "S3", "S4"]
+for (let i = 0; i < shadowID.length; i++) {
+    d3.select("#shadowContainer").insert("div").classed("cursor", true).attr("id", shadowID[i]);
+}
 
 window.onscroll = () => {
     let scrollTop = window.scrollY;
@@ -108,10 +105,9 @@ function lightSwitch(i) {
     };
 };
 
-
 const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
-console.log(allCursorList);
+
 for (let i = 0; i < allCursorList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
@@ -134,9 +130,9 @@ for (let i = 0; i < shadowList.length; i++) {
         `;
     });
 
-    document.addEventListener('mouseup', (e) => {
+    document.addEventListener('mouseup', (e) => { //Why does this work?? Or.. Not. == / ===
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth == 1000}px;
+        width: ${shadowList[i].clientWidth == 1000}px; 
         height: ${shadowList[i].clientHeight == 1000}px;
         left: ${e.clientX}px;
         top: ${e.clientY}px;

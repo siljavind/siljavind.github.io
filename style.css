@@ -9,6 +9,7 @@
         body {
             margin: 0;
             padding: 0;
+            cursor: crosshair;
         }
         
         svg {
@@ -37,40 +38,28 @@
             clip-path: circle();
         }
         
-        #mainCursor {
-            position: fixed;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            border: 0.1px solid rgb(0, 0, 0);
-            filter: none;
-            mask-image: none;
-            -webkit-mask-image: none;
-        }
-        
-        #shadow1 {
+        #S1 {
             width: 1000px;
             height: 1000px;
             background: radial-gradient(red, black, transparent);
             animation: pulse1 10s infinite;
         }
         
-        #shadow2 {
+        #S2 {
             width: 600px;
             height: 600px;
             background: radial-gradient(orange, transparent, transparent);
             animation-delay: 2s;
         }
         
-        #shadow3 {
+        #S3 {
             width: 300px;
             height: 300px;
             background: radial-gradient(hotpink, transparent, transparent);
             animation-delay: 4s;
         }
         
-        #shadow4 {
+        #S4 {
             width: 200px;
             height: 200px;
             background: radial-gradient(white, transparent, transparent);
