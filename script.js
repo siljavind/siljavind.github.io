@@ -79,16 +79,10 @@ function getElmt(i) {
     document.getElementById(i).scrollIntoView();
 };
 
-const shadowList = document.querySelectorAll(".cursor");
-
-const shadowID = ["S1", "S2", "S3", "S4"]
-for (let i = 0; i < shadowID.length; i++) {
-    d3.select("#shadowContainer").insert("div").classed("cursor", true).attr("id", shadowID[i]);
-}
-
 function lightSwitch(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
+    let cursorStyle = allCursorList
 
 
     if (lightStyle.marginLeft == '10px') {
@@ -98,10 +92,6 @@ function lightSwitch(i) {
         document.body.style.cssText = `
         background-color: bisque;
         `;
-        shadowList.style.cssText = `
-        width: 0px;
-        height: 0px;
-        `
 
     } else {
         lightSwitch.style.cssText = `
@@ -115,6 +105,12 @@ function lightSwitch(i) {
 
 
 
+const shadowID = ["S1", "S2", "S3", "S4"]
+for (let i = 0; i < shadowID.length; i++) {
+    d3.select("#shadowContainer").insert("div").classed("shadow", true).attr("id", shadowID[i]);
+}
+
+const shadowList = document.querySelectorAll(".shadow");
 for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
