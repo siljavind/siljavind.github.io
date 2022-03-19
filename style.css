@@ -2,7 +2,7 @@
             scroll-behavior: smooth;
             font-family: ArtDecoFont;
             color: black;
-            background-color: white;
+            background-color: black;
             user-select: none;
         }
         
@@ -25,9 +25,9 @@
             src: url(/assets/Semplicita/Semplicita\ Light.otf)
         }
         
-        .ccsCursor {
+        .cursor {
             position: fixed;
-            display: block;
+            display: inline-block;
             transform: translate(-50%, -50%);
             filter: blur(20px);
             mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
@@ -48,7 +48,8 @@
             mask-image: none;
             -webkit-mask-image: none;
         }
-        /*#shadow1 {
+        
+        #shadow1 {
             width: 1000px;
             height: 1000px;
             background: radial-gradient(red, black, transparent);
@@ -74,7 +75,7 @@
             height: 200px;
             background: radial-gradient(white, transparent, transparent);
             animation-delay: 6s;
-        }*/
+        }
         
         .scroller {
             position: fixed;

@@ -1,11 +1,7 @@
 {
-    data = ["width: 1000px; height: 1000px; background: radial-gradient(red, black, transparent); animation: pulse1 10s infinite;",
-        "width: 600px; height: 600px; background: radial-gradient(orange, transparent, transparent); animation-delay: 2s;",
-        "width: 300px; height: 300px; background: radial-gradient(hotpink, transparent, transparent); animation-delay: 4s",
-        "width: 200px; height: 200px; background: radial-gradient(white, transparent, transparent); animation-delay: 6s;"
-    ]
-    for (let i = 0; i < data.length; i++) {
-        d3.select("#cssCursorBox").append("div").classed("cssCursor", true).attr("style", data[i]);
+    const shadowID = ["S1", "S2", "S3", "S4"]
+    for (let i = 0; i < 2; i++) {
+        d3.select("#shadowContainer").append("div").classed("cssCursor", true).attr("id", shadowID);
     }
 
 
@@ -113,9 +109,9 @@ function lightSwitch(i) {
 };
 
 
-const allCursorList = document.querySelectorAll("#mainCursor, .ccsCursor"); //, #svgCursor
+const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
 const shadowList = document.querySelectorAll(".cursor");
-
+console.log(allCursorList);
 for (let i = 0; i < allCursorList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
