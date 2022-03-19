@@ -56,10 +56,7 @@
     };
 };
 
-const shadowID = ["S1", "S2", "S3", "S4"]
-for (let i = 0; i < shadowID.length; i++) {
-    d3.select("#shadowContainer").insert("div").classed("cursor", true).attr("id", shadowID[i]);
-}
+
 
 window.onscroll = () => {
     let scrollTop = window.scrollY;
@@ -82,22 +79,33 @@ function getElmt(i) {
     document.getElementById(i).scrollIntoView();
 };
 
+const shadowList = document.querySelectorAll(".cursor");
+
+const shadowID = ["S1", "S2", "S3", "S4"]
+for (let i = 0; i < shadowID.length; i++) {
+    d3.select("#shadowContainer").insert("div").classed("cursor", true).attr("id", shadowID[i]);
+}
+
 function lightSwitch(i) {
     let lightSwitch = document.getElementById(i);
-    let style = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
+    let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
-    if (style.marginLeft == '10px') {
+
+    if (lightStyle.marginLeft == '10px') {
         lightSwitch.style.cssText = `
         margin-left: 40px;
-        background-color: bisque;
         `;
         document.body.style.cssText = `
         background-color: bisque;
         `;
+        shadowList.style.cssText = `
+        width: 0px;
+        height: 0px;
+        `
+
     } else {
         lightSwitch.style.cssText = `
         margin-left: 10px;
-        background-color: rgb(10, 10, 10);
         `;
         document.body.style.cssText = `
         background-color: black;
@@ -105,13 +113,12 @@ function lightSwitch(i) {
     };
 };
 
-const allCursorList = document.querySelectorAll("#mainCursor, .cursor");
-const shadowList = document.querySelectorAll(".cursor");
 
-for (let i = 0; i < allCursorList.length; i++) {
+
+for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
-        allCursorList[i].style.cssText = `
+        shadowList[i].style.cssText = `
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
