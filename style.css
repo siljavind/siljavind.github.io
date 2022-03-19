@@ -11,13 +11,15 @@
             padding: 0;
         }
         
-        svg, path {
+        svg,
+        path {
             position: fixed;
-            display: inline-block;
-            filter: url("#f1");
+            display: block;
+            /*filter: url("#f1");*/
             overflow: visible;
+            float: right;
+            right: 0;
         }
-
         
         @font-face {
             font-family: ArtDecoFont;
