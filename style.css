@@ -2,7 +2,7 @@
         
         html,
         body {
-            background-color: bisque;
+            background-color: black;
             color: black;
             font-family: ArtDecoFont;
             scroll-behavior: smooth;
@@ -127,8 +127,8 @@
             filter: blur(20px);
             mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
             -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
-            animation: width 5s ease-out, height 5s ease-out, pulse 10s infinite;
-            transition: 0.8s linear;
+            animation: pulse 10s infinite;
+            transition: 950ms ease-out;
             clip-path: circle();
         }
         

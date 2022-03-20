@@ -51,7 +51,10 @@ function lightSwitch(i) {
 const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
 
 for (let i = 0; i < shadowID.length; i++) {
-    d3.select("#shadowContainer").insert("div").classed("shadow", true).attr("id", shadowID[i]);
+    d3.select("#shadowContainer")
+        .insert("div")
+        .classed("shadow", true)
+        .attr("id", shadowID[i]);
 };
 
 const shadowList = document.querySelectorAll(".shadow");
@@ -92,9 +95,9 @@ for (let i = 0; i < shadowList.length; i++) {
         `;
     });
 
-    document.onload = onLoad();
+    document.onload = setToZero();
 
-    function onLoad() {
+    function setToZero() {
         shadowList[i].style.cssText = `
         width: ${shadowList[i].clientWidth = 0};
         height: ${shadowList[i].clientHeight = 0};
