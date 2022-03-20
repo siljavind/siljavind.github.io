@@ -4,45 +4,19 @@
         body {
             background: bisque;
             color: hotpink;
-            font-family: ArtDecoFont;
-            scroll-behavior: smooth;
-            cursor: crosshair;
-            user-select: none;
-            margin: 0;
-            padding: 0;
         }
         /* || SVG *****************************************************************************************************************SVG**/
         
+        #lightSwitch {
+            margin-left: 40px;
+        }
+        
         svg {
             position: fixed;
-            display: block;
+            display: inline-block;
             filter: url("#f1");
             overflow: visible;
-            width: 110vw;
-            height: 110vh;
+            width: 100vw;
+            height: 100vh;
         }
         /* || ANIMATIONS ***************************************************************************************************ANIMATIONS**/
-        
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.6;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes pulse1 {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.9;
-            }
-            100% {
-                opacity: 1;
-            }
-        }

@@ -24,61 +24,47 @@ function getElmt(i) {
 
 
 // LIGHT SWITCH ***********************************************************************************************************LIGHT SWITCH**
-function lightSwitch(i) {
+function onOff(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
-    if (lightStyle.marginLeft == '10px') {
-        d3.select("head")
-            .select("link")
-            .remove();
+    if (lightStyle.marginLeft === '10px') {
+        d3.select("div")
+            .remove()
+            .transition()
+            .duration(1000)
+            .on("end", createBlob);
 
-        d3.select("head")
-            .insert("link", ":first-child")
-            .attr("rel", "stylesheet")
-            .attr("href", "styleLight.css");
-        lightSwitch.style.cssText = `
-        margin-left: 40px;
-        `;
-        document.body.style.cssText = `
-        background: bisque;
-        `;
-        console.log(lightStyle.marginLeft)
-    } else {
-        d3.select("head")
-            .select("link")
-            .remove();
+    }
+    if (lightStyle.marginLeft === '40px') {
+        d3.select("svg")
+            .remove()
 
-        d3.select("head")
-            .insert("link", ":first-child")
-            .attr("rel", "stylesheet")
-            .attr("href", "styleDark.css");
-        lightSwitch.style.cssText = `
-        margin-left: 10px;
-        `;
-        document.body.style.cssText = `
-        background: black;
-        `;
+
+
+        createShadow();
         console.log(lightStyle.marginLeft);
+    }
 
+};
+
+// CURSOR SHADOW *********************************************************************************************************CURSOR SHADOW**
+function createShadow() {
+    const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
+
+    d3.select("body")
+        .insert("div", ":first-child") //inserts before first child of parent (body)
+        .attr("id", "shadowContainer");
+
+    for (let i = 0; i < shadowID.length; i++) {
+        d3.select("#shadowContainer")
+            .insert("div")
+            .classed("shadow", true)
+            .attr("id", shadowID[i]);
     };
 };
 
-
-// CURSOR SHADOW *********************************************************************************************************CURSOR SHADOW**
-
-const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
-
-d3.select("body")
-    .insert("div", ":first-child") //inserts before first child of parent (body)
-    .attr("id", "shadowContainer");
-
-for (let i = 0; i < shadowID.length; i++) {
-    d3.select("#shadowContainer")
-        .insert("div")
-        .classed("shadow", true)
-        .attr("id", shadowID[i]);
-};
+createShadow();
 
 const shadowList = document.querySelectorAll(".shadow");
 
@@ -143,49 +129,62 @@ for (let i = 0; i < shadowList.length; i++) {
         "rgba(255, 100, 160, 0.9)",
         "rgba(255, 50, 0, 0.9)"
     ];
-    const blobContainer = ["blob1", "blob2", "blob3"]
 
-    let svg = d3.select("svg"),
-        currentBlobs = randomBlobs(colors.length);
+    function createBlob() {
+        d3.select("body")
+            .insert("svg", ":first-child")
+            .attr("viewBox", "-450 -300 450 300");
 
-    let paths = svg
-        .selectAll("path")
-        .data(currentBlobs)
-        .enter()
-        .append("path")
-        .style("fill", function(_, i) {
-            return colors[i];
-        })
+        d3.select("svg")
+            .insert("filter")
+            .attr("id", "f1");
 
-    animate();
+        d3.select("filter")
+            .insert("feGaussianBlur")
+            .attr("stdDeviation", "70");
 
-    function randomBlobs(numOfBlobs) {
-        return d3.range(numOfBlobs).map(randomBlob);
-    };
+        let svg = d3.select("svg"),
+            currentBlobs = randomBlobs(colors.length);
 
-    function randomBlob() {
-        const random = Math.floor(Math.random() * blobList.length);
-        return blobList[random];
-    };
-
-    function animate() {
-        let nextBlobs = randomBlobs(currentBlobs.length),
-            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 30 });
-
-        currentBlobs = nextBlobs;
-
-        paths
-            .data(interpolators)
-            .transition()
-            .delay(20)
-            .duration(10000)
-            .attrTween("d", function(d) {
-                return d;
+        let paths = svg
+            .selectAll("path")
+            .data(currentBlobs)
+            .enter()
+            .append("path")
+            .style("fill", function(_, i) {
+                return colors[i];
             })
-            .filter(function(_, i) {
-                return !i;
-            })
-            .on("end", animate);
+
+        animate();
+
+        function randomBlobs(numOfBlobs) {
+            return d3.range(numOfBlobs).map(randomBlob);
+        };
+
+        function randomBlob() {
+            const random = Math.floor(Math.random() * blobList.length);
+            return blobList[random];
+        };
+
+        function animate() {
+            let nextBlobs = randomBlobs(currentBlobs.length),
+                interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 40 });
+
+            currentBlobs = nextBlobs;
+
+            paths
+                .data(interpolators)
+                .transition()
+                .delay(20)
+                .duration(10000)
+                .attrTween("d", function(d) {
+                    return d;
+                })
+                .filter(function(_, i) {
+                    return !i;
+                })
+                .on("end", animate);
+        };
     };
 };
 

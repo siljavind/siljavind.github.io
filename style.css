@@ -93,7 +93,8 @@ body {
     grid-area: 6 / 1;
     width: 20px;
     height: 20px;
-    margin: 2.5px 0px 0px 10px;
+    margin-top: 2.5px;
+    margin-left: 10px;
     border: 2px solid rgb(10, 10, 10);
     border-radius: 15px;
     transition: .7s ease;
@@ -113,6 +114,61 @@ body {
 }
 
 
+/* || SVG *****************************************************************************************************************SVG**/
+
+svg {
+    position: fixed;
+    display: inline-block;
+    filter: url("#f1");
+    overflow: visible;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* || SHADOWS *********************************************************************************************************SHADOWS**/
+
+.shadow {
+    position: fixed;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
+    -webkit-mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
+    animation: pulse 10s infinite;
+    transition: 950ms ease-out;
+    clip-path: circle();
+}
+
+#shadow1 {
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(red, black, transparent);
+    animation: pulse1 10s infinite;
+}
+
+#shadow2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(orange, transparent, transparent);
+    animation-delay: 2s;
+}
+
+#shadow3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(hotpink, transparent, transparent);
+    animation-delay: 4s;
+}
+
+#shadow4 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(white, transparent, transparent);
+    animation-delay: 6s;
+}
+
+
 /* || SCROLLER *******************************************************************************************************SCROLLER**/
 
 .scroller {
@@ -125,4 +181,31 @@ body {
  ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
+}
+
+
+/* || ANIMATIONS ***************************************************************************************************ANIMATIONS**/
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse1 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
 }

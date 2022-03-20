@@ -1,20 +1,8 @@
         /* || GENERAL *********************************************************************************************************GENERAL**/
         
-        html,
-        body {
-            background: black;
-            color: black;
-            font-family: ArtDecoFont;
-            scroll-behavior: smooth;
-            cursor: crosshair;
-            user-select: none;
-            margin: 0;
-            padding: 0;
-        }
-        
         .shadow {
             position: fixed;
-            display: block;
+            display: inline-block;
             transform: translate(-50%, -50%);
             filter: blur(20px);
             mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
@@ -52,8 +40,26 @@
             animation-delay: 6s;
         }
         
-        svg {
-            position: absolute;
-            width: 0;
-            height: 0;
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse1 {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 1;
+            }
         }

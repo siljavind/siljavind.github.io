@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styleDark.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/logoFavicon.png" type="image/gif">
     <title>Silja Vind Jørgensen</title>
@@ -14,13 +13,6 @@
 
 <body>
 
-
-    <svg viewBox="-450 -300 450 300">
-        <filter id="f1">
-            <feGaussianBlur stdDeviation="70"/>
-        </filter>
-    </svg>
-
     <div class="scroller"></div>
 
     <div class="menuGrid">
@@ -30,7 +22,7 @@
         <div class="menu" id="buttonWat" onclick="watHeyo(id)">Wat</div>
 
         <button id="lightSwitchBorder"></button>
-        <button id="lightSwitch" onclick="lightSwitch(id)"></button>
+        <button id="lightSwitch" onclick="onOff('lightSwitch')"></button>
     </div>
 
     <div class="mainGrid">
