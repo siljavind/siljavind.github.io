@@ -1,22 +1,22 @@
-        /* || GENERAL ************************************************************/
+        /* || GENERAL *********************************************************************************************************GENERAL**/
         
         html,
         body {
-            color: black;
             background-color: bisque;
-            margin: 0;
-            padding: 0;
+            color: black;
             font-family: ArtDecoFont;
             scroll-behavior: smooth;
-            user-select: none;
             cursor: crosshair;
+            user-select: none;
+            margin: 0;
+            padding: 0;
         }
         
         @font-face {
             font-family: ArtDecoFont;
             src: url(/assets/Semplicita/Semplicita\ Light.otf)
         }
-        /* || MAIN GRID ************************************************************/
+        /* || MAIN GRID *****************************************************************************************************MAIN GRID**/
         
         .mainGrid {
             position: relative;
@@ -40,7 +40,7 @@
             grid-area: 30 / 1;
             text-align: center;
         }
-        /* || MENU GRID ************************************************************/
+        /* || MENU GRID *****************************************************************************************************MENU GRID**/
         
         .menuGrid {
             position: sticky;
@@ -81,7 +81,7 @@
         #buttonWat {
             grid-area: 1 / 3 / span 1 / span 4;
         }
-        /* || LIGHTSWITCH ************************************************************/
+        /* || LIGHT SWITCH ***********************************************************************************************LIGHT SWITCH**/
         
         #lightSwitch {
             grid-area: 6 / 1;
@@ -105,7 +105,20 @@
             background: transparent;
             cursor: inherit;
         }
-        /* || CURSOR SHADOW ************************************************************/
+        /* || SCROLLER *******************************************************************************************************SCROLLER**/
+        
+        .scroller {
+            position: fixed;
+            width: 1px;
+            height: 100%;
+            right: 25px;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+        /* || CURSOR SHADOW *********************************************************************************************CURSOR SHADOW**/
         
         .shadow {
             position: fixed;
@@ -146,7 +159,7 @@
             background: radial-gradient(white, transparent, transparent);
             animation-delay: 6s;
         }
-        /* || SVG ************************************************************/
+        /* || SVG *****************************************************************************************************************SVG**/
         
         svg {
             position: fixed;
@@ -156,20 +169,7 @@
             width: 110vw;
             height: 110vh;
         }
-        /* || SCROLLER ************************************************************/
-        
-        .scroller {
-            position: fixed;
-            width: 1px;
-            height: 100%;
-            right: 25px;
-        }
-        
-         ::-webkit-scrollbar {
-            width: 0px;
-            height: 0px;
-        }
-        /* || ANIMATIONS ************************************************************/
+        /* || ANIMATIONS ***************************************************************************************************ANIMATIONS**/
         
         @keyframes pulse {
             0% {
