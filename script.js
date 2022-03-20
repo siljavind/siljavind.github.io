@@ -21,6 +21,12 @@ function getElmt(i) {
     document.getElementById(i).scrollIntoView();
 };
 
+function svgEmpty() {
+    result = document.body.currentStyle || window.getComputedStyle(document.body);
+    if (!result.backgroundColor === "black") {
+        return "i = 0";
+    }
+};
 
 // LIGHT SWITCH ***********************************************************************************************************LIGHT SWITCH**
 function onOff(i) {
@@ -31,7 +37,7 @@ function onOff(i) {
         d3.select("div")
             .remove();
 
-        document.body.style.cssText = `background-color: bisque;`;
+        document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
         createBlob();
     }
@@ -65,15 +71,16 @@ function createShadow() {
 
 createShadow();
 
+
 const shadowList = document.querySelectorAll(".shadow");
 
 for (let i = 0; i < shadowList.length; i++) {
-
     document.addEventListener('mousemove', (e) => {
         shadowList[i].style.cssText = `
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
+
     });
 
     document.addEventListener('mousedown', (e) => {
@@ -111,6 +118,8 @@ for (let i = 0; i < shadowList.length; i++) {
         height: ${shadowList[i].clientHeight = 0};
         `;
     };
+    svgEmpty();
+    console.log(i);
 };
 
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
@@ -124,9 +133,9 @@ for (let i = 0; i < shadowList.length; i++) {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgb(128, 0, 150)",
-        "rgba(255, 100, 160, 0.9)",
-        "rgba(255, 50, 0, 0.9)"
+        "rgb(148, 89, 200)",
+        "rgba(209, 70, 120, 0.9)",
+        "rgba(243, 59, 33, 0.9)"
     ];
 
     function createBlob() {
@@ -167,14 +176,14 @@ for (let i = 0; i < shadowList.length; i++) {
 
         function animate() {
             let nextBlobs = randomBlobs(currentBlobs.length),
-                interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 40 });
+                interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
 
             currentBlobs = nextBlobs;
 
             paths
                 .data(interpolators)
                 .transition()
-                .duration(5000)
+                .duration(4000)
                 .attrTween("d", function(d) {
                     return d;
                 })
