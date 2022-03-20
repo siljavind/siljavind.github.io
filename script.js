@@ -28,12 +28,6 @@ function lightSwitch(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
     if (lightStyle.marginLeft == '10px') {
-        lightSwitch.style.cssText = `
-        margin-left: 40px;
-        `;
-        document.body.style.cssText = `
-        background-color: bisque;
-        `;
         d3.select("head")
             .select("link")
             .remove();
@@ -42,14 +36,14 @@ function lightSwitch(i) {
             .insert("link", ":first-child")
             .attr("rel", "stylesheet")
             .attr("href", "styleLight.css");
-
-    } else {
         lightSwitch.style.cssText = `
-        margin-left: 10px;
+        margin-left: 40px;
         `;
         document.body.style.cssText = `
-        background-color: black;
+        background: bisque;
         `;
+
+    } else {
         d3.select("head")
             .select("link")
             .remove();
@@ -58,6 +52,13 @@ function lightSwitch(i) {
             .insert("link", ":first-child")
             .attr("rel", "stylesheet")
             .attr("href", "styleDark.css");
+        lightSwitch.style.cssText = `
+        margin-left: 10px;
+        `;
+        document.body.style.cssText = `
+        background: black;
+        `;
+
     };
 };
 
@@ -140,6 +141,7 @@ for (let i = 0; i < shadowList.length; i++) {
         "rgba(255, 100, 160, 0.9)",
         "rgba(255, 50, 0, 0.9)"
     ];
+    const blobContainer = ["blob1", "blob2", "blob3"]
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);

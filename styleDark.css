@@ -2,7 +2,7 @@
         
         html,
         body {
-            background-color: black;
+            background: black;
             color: black;
             font-family: ArtDecoFont;
             scroll-behavior: smooth;
@@ -159,9 +159,8 @@
             background: radial-gradient(white, transparent, transparent);
             animation-delay: 6s;
         }
-        /* || SVG *****************************************************************************************************************SVG**
-        
-        svg {
+        /* || SVG *****************************************************************************************************************SVG**/
+        /*svg {
             position: fixed;
             display: block;
             filter: url("#f1");
