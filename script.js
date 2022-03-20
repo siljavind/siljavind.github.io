@@ -21,10 +21,12 @@ function getElmt(i) {
     document.getElementById(i).scrollIntoView();
 };
 
-function svgEmpty() {
-    result = document.body.currentStyle || window.getComputedStyle(document.body);
-    if (!result.backgroundColor === "black") {
-        return "i = 0";
+function svgEmpty() { //*****************************************************FIX THIS SHIT
+    let item = document.querySelector("body");
+    let result = item.currentStyle || window.getComputedStyle(item);
+    console.log(item);
+    if (!result.backgroundColor == "black") {
+        return i = 0;
     }
 };
 
@@ -118,7 +120,7 @@ for (let i = 0; i < shadowList.length; i++) {
         height: ${shadowList[i].clientHeight = 0};
         `;
     };
-    svgEmpty();
+    svgEmpty(); // *******************************************************ALSO FIX THIS SHIT
     console.log(i);
 };
 
