@@ -27,6 +27,7 @@ function getElmt(i) {
 function lightSwitch(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
+
     if (lightStyle.marginLeft == '10px') {
         d3.select("head")
             .select("link")
