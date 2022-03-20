@@ -1,14 +1,12 @@
-        html {
-            scroll-behavior: smooth;
-            font-family: ArtDecoFont;
+        html,
+        body {
             color: black;
             background-color: black;
-            user-select: none;
-        }
-        
-        body {
             margin: 0;
             padding: 0;
+            font-family: ArtDecoFont;
+            scroll-behavior: smooth;
+            user-select: none;
             cursor: crosshair;
         }
         
@@ -28,7 +26,7 @@
         
         .shadow {
             position: fixed;
-            display: inline-block;
+            display: block;
             transform: translate(-50%, -50%);
             filter: blur(20px);
             mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
@@ -38,28 +36,28 @@
             clip-path: circle();
         }
         
-        #S1 {
+        #s1 {
             width: 1000px;
             height: 1000px;
             background: radial-gradient(red, black, transparent);
             animation: pulse1 10s infinite;
         }
         
-        #S2 {
+        #s2 {
             width: 600px;
             height: 600px;
             background: radial-gradient(orange, transparent, transparent);
             animation-delay: 2s;
         }
         
-        #S3 {
+        #s3 {
             width: 300px;
             height: 300px;
             background: radial-gradient(hotpink, transparent, transparent);
             animation-delay: 4s;
         }
         
-        #S4 {
+        #s4 {
             width: 200px;
             height: 200px;
             background: radial-gradient(white, transparent, transparent);
@@ -134,6 +132,7 @@
             border: 2px solid rgb(10, 10, 10);
             border-radius: 15px;
             background: transparent;
+            cursor: inherit;
         }
         
         #lightSwitch {
@@ -145,6 +144,7 @@
             border-radius: 15px;
             transition: .7s ease;
             background: transparent;
+            cursor: inherit;
         }
         
         .logo {
