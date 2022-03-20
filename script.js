@@ -27,7 +27,6 @@ function getElmt(i) {
 function lightSwitch(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
-
     if (lightStyle.marginLeft == '10px') {
         lightSwitch.style.cssText = `
         margin-left: 40px;
@@ -35,7 +34,14 @@ function lightSwitch(i) {
         document.body.style.cssText = `
         background-color: bisque;
         `;
+        d3.select("head")
+            .select("link")
+            .remove();
 
+        d3.select("head")
+            .insert("link", ":first-child")
+            .attr("rel", "stylesheet")
+            .attr("href", "styleLight.css");
 
     } else {
         lightSwitch.style.cssText = `
@@ -44,6 +50,14 @@ function lightSwitch(i) {
         document.body.style.cssText = `
         background-color: black;
         `;
+        d3.select("head")
+            .select("link")
+            .remove();
+
+        d3.select("head")
+            .insert("link", ":first-child")
+            .attr("rel", "stylesheet")
+            .attr("href", "styleDark.css");
     };
 };
 
