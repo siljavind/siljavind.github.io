@@ -43,7 +43,7 @@ function lightSwitch(i) {
         document.body.style.cssText = `
         background: bisque;
         `;
-
+        console.log(lightStyle.marginLeft)
     } else {
         d3.select("head")
             .select("link")
@@ -59,6 +59,7 @@ function lightSwitch(i) {
         document.body.style.cssText = `
         background: black;
         `;
+        console.log(lightStyle.marginLeft);
 
     };
 };
