@@ -8,9 +8,10 @@
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
 
+    const colors = ["rgb(128, 0, 150)", "rgba(255, 100, 160, 0.9)", "rgba(255, 50, 0, 0.9)"];
+
     let svg = d3.select("svg"),
-        currentBlobs = randomBlobs(3),
-        colors = ["rgba(128, 0, 150)", "rgba(255, 100, 160)", "rgba(255, 50, 0, 0.9)"];
+        currentBlobs = randomBlobs(colors.length);
 
     let paths = svg
         .selectAll("path")
@@ -40,7 +41,7 @@
         paths
             .data(interpolators)
             .transition()
-            .delay(0)
+            .delay(20)
             .duration(10000)
             .attrTween("d", function(d) {
                 return d;
@@ -100,7 +101,7 @@ function lightSwitch(i) {
 
 
 
-const shadowID = ["s1", "s2", "s3", "s4"]
+const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
 for (let i = 0; i < shadowID.length; i++) {
     d3.select("#shadowContainer").insert("div").classed("shadow", true).attr("id", shadowID[i]);
 }
