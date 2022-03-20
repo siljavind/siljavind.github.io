@@ -9,7 +9,6 @@ window.onscroll = () => {
     document.querySelector(
         ".scroller"
     ).style.background = `linear-gradient(to bottom, #000 ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
-
 };
 
 
@@ -28,22 +27,22 @@ function onOff(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
-    if (lightStyle.marginLeft === '10px') {
+    if (lightStyle.marginLeft == '10px') {
         d3.select("div")
-            .remove()
-            .transition()
-            .duration(1000)
-            .on("end", createBlob);
+            .remove();
 
+        document.body.style.cssText = `background-color: bisque;`;
+        lightSwitch.style.cssText = `margin-left: 40px`;
+        createBlob();
     }
-    if (lightStyle.marginLeft === '40px') {
+
+    if (lightStyle.marginLeft == '40px') {
         d3.select("svg")
-            .remove()
+            .remove();
 
-
-
+        document.body.style.cssText = `background-color: black`;
+        lightSwitch.style.cssText = `margin-left: 10px`;
         createShadow();
-        console.log(lightStyle.marginLeft);
     }
 
 };
@@ -141,7 +140,7 @@ for (let i = 0; i < shadowList.length; i++) {
 
         d3.select("filter")
             .insert("feGaussianBlur")
-            .attr("stdDeviation", "70");
+            .attr("stdDeviation", "80");
 
         let svg = d3.select("svg"),
             currentBlobs = randomBlobs(colors.length);
@@ -175,8 +174,7 @@ for (let i = 0; i < shadowList.length; i++) {
             paths
                 .data(interpolators)
                 .transition()
-                .delay(20)
-                .duration(10000)
+                .duration(5000)
                 .attrTween("d", function(d) {
                     return d;
                 })

@@ -2,7 +2,7 @@
 
 html,
 body {
-    background: black;
+    background-color: black;
     color: black;
     font-family: ArtDecoFont;
     scroll-behavior: smooth;
