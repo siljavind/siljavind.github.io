@@ -33,8 +33,9 @@ function lightSwitch(i) {
         margin-left: 40px;
         `;
         document.body.style.cssText = `
-        background-color: rgb(252, 240, 225);
+        background-color: bisque;
         `;
+
 
     } else {
         lightSwitch.style.cssText = `
@@ -48,7 +49,12 @@ function lightSwitch(i) {
 
 
 // CURSOR SHADOW *********************************************************************************************************CURSOR SHADOW**
+
 const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
+
+d3.select("body")
+    .insert("div", ":first-child") //inserts before first child of parent (body)
+    .attr("id", "shadowContainer");
 
 for (let i = 0; i < shadowID.length; i++) {
     d3.select("#shadowContainer")
