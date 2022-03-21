@@ -28,20 +28,24 @@ function onOff(i) {
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
     if (lightStyle.marginLeft === '10px') {
-        d3.select("div")
-            .remove();
 
         document.body.style.cssText = `background-color: bisque;`;
         lightSwitch.style.cssText = `margin-left: 40px`;
+
+        d3.select("div")
+            .remove();
+
         createBlob();
     }
 
     if (lightStyle.marginLeft === '40px') {
-        d3.select("svg")
-            .remove();
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
+
+        d3.select("svg")
+            .remove();
+
         createShadow();
     }
 
@@ -78,68 +82,68 @@ createShadow();
 const shadowList = document.querySelectorAll(".shadow");
 
 let item = document.querySelector("body");
-let result = item.currentStyle || window.getComputedStyle(item);
+let bodyStyle = item.currentStyle || window.getComputedStyle(item);
 
 let selection = d3.select(".shadow")
 console.log(selection.empty());
 
-if (selection.empty() == false) {
-    for (let i = 0; i < shadowList.length; i++) {
-        console.log(i);
+
+
+for (let i = 0; i < shadowList.length; i++) {
 
     document.addEventListener('mousemove', (e) => {
         shadowList[i].style.cssText = `
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
-
-        if ((!result.backgroundColor == 'rgb(255, 228, 196)') && (i == "3")) {
-            
-            i = 0;
-        };
+            left: ${e.clientX}px;
+            top: ${e.clientY}px;
+            `;
         // *******************************************************ALSO FIX THIS SHIT
-        
+
     });
 
     document.addEventListener('mousedown', (e) => {
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth = Math.max(1500)}px;
-        height: ${shadowList[i].clientHeight = Math.max(1500)}px;
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
+            width: ${shadowList[i].clientWidth = Math.max(1500)}px;
+            height: ${shadowList[i].clientHeight = Math.max(1500)}px;
+            left: ${e.clientX}px;
+            top: ${e.clientY}px;
+            `;
     });
 
     document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. value
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth = false}; 
-        height: ${shadowList[i].clientHeight = false};
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
+            width: ${shadowList[i].clientWidth = false}; 
+            height: ${shadowList[i].clientHeight = false};
+            left: ${e.clientX}px;
+            top: ${e.clientY}px;
+            `;
     });
 
     document.addEventListener('mouseleave', (e) => {
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth = 0};
-        height: ${shadowList[i].clientHeight = 0};
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
+            width: ${shadowList[i].clientWidth = 0};
+            height: ${shadowList[i].clientHeight = 0};
+            left: ${e.clientX}px;
+            top: ${e.clientY}px;
+            `;
     });
 
     document.onload = setToZero();
 
     function setToZero() {
         shadowList[i].style.cssText = `
-        width: ${shadowList[i].clientWidth = 0};
-        height: ${shadowList[i].clientHeight = 0};
-        `;
+            width: ${shadowList[i].clientWidth = 0};
+            height: ${shadowList[i].clientHeight = 0};
+            `;
     };
-    
+
+    if ((i == '3') && (bodyStyle.backgroundColor == ('bisque' || 'rgb(255, 228, 196)'))) {
+        i = 0;
+        console.log(bodyStyle.backgroundColor);
+    };
+
 };
-}
- 
+
+
 
 
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
