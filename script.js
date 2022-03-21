@@ -81,15 +81,15 @@ createShadow();
 
 const shadowList = document.querySelectorAll(".shadow");
 
-let item = document.querySelector("body");
-let bodyStyle = item.currentStyle || window.getComputedStyle(item);
-
-let selection = d3.select(".shadow")
-console.log(selection.empty());
-
-
-
 for (let i = 0; i < shadowList.length; i++) {
+
+    let item = document.querySelector("body");
+    let bodyStyle = window.getComputedStyle(item);
+
+    console.log(bodyStyle.backgroundColor);
+
+    let selection = d3.select(".shadow")
+    console.log(selection.empty());
 
     document.addEventListener('mousemove', (e) => {
         shadowList[i].style.cssText = `
@@ -138,7 +138,7 @@ for (let i = 0; i < shadowList.length; i++) {
 
     if ((i == '3') && (bodyStyle.backgroundColor == ('bisque' || 'rgb(255, 228, 196)'))) {
         i = 0;
-        console.log(bodyStyle.backgroundColor);
+
     };
 
 };
