@@ -21,30 +21,22 @@ function getElmt(i) {
     document.getElementById(i).scrollIntoView();
 };
 
-function svgEmpty() { //*****************************************************FIX THIS SHIT
-    let item = document.querySelector("body");
-    let result = item.currentStyle || window.getComputedStyle(item);
-    console.log(item);
-    if (!result.backgroundColor == "black") {
-        return i = 0;
-    }
-};
 
 // LIGHT SWITCH ***********************************************************************************************************LIGHT SWITCH**
 function onOff(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
-    if (lightStyle.marginLeft == '10px') {
+    if (lightStyle.marginLeft === '10px') {
         d3.select("div")
             .remove();
 
-        document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
+        document.body.style.cssText = `background-color: bisque;`;
         lightSwitch.style.cssText = `margin-left: 40px`;
         createBlob();
     }
 
-    if (lightStyle.marginLeft == '40px') {
+    if (lightStyle.marginLeft === '40px') {
         d3.select("svg")
             .remove();
 
@@ -73,16 +65,40 @@ function createShadow() {
 
 createShadow();
 
+/*function svgEmpty() { //*****************************************************FIX THIS SHIT
+    let item = document.querySelector("body");
+    let result = item.currentStyle || window.getComputedStyle(item);
+    if (result.backgroundColor == 'rgb(255, 228, 196)') {
+        console.log(result.backgroundColor);
+        return i = 0;       
+    }
+};*/
+
 
 const shadowList = document.querySelectorAll(".shadow");
 
-for (let i = 0; i < shadowList.length; i++) {
+let item = document.querySelector("body");
+let result = item.currentStyle || window.getComputedStyle(item);
+
+let selection = d3.select(".shadow")
+console.log(selection.empty());
+
+if (selection.empty() == false) {
+    for (let i = 0; i < shadowList.length; i++) {
+        console.log(i);
+
     document.addEventListener('mousemove', (e) => {
         shadowList[i].style.cssText = `
         left: ${e.clientX}px;
         top: ${e.clientY}px;
         `;
 
+        if ((!result.backgroundColor == 'rgb(255, 228, 196)') && (i == "3")) {
+            
+            i = 0;
+        };
+        // *******************************************************ALSO FIX THIS SHIT
+        
     });
 
     document.addEventListener('mousedown', (e) => {
@@ -120,9 +136,11 @@ for (let i = 0; i < shadowList.length; i++) {
         height: ${shadowList[i].clientHeight = 0};
         `;
     };
-    svgEmpty(); // *******************************************************ALSO FIX THIS SHIT
-    console.log(i);
+    
 };
+}
+ 
+
 
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
 {
