@@ -1,35 +1,18 @@
-// SCROLLER *******************************************************************************************************************SCROLLER**
-window.onscroll = () => {
-    let scrollTop = window.scrollY;
-    let docHeight = document.body.offsetHeight;
-    let winHeight = window.innerHeight;
-    let scrollPercent = scrollTop / (docHeight - winHeight);
-    let scrollPercentRounded = Math.round(scrollPercent * 100);
+// ON START *******************************************************************************************************************ON START**
 
-    document.querySelector(
-        ".scroller"
-    ).style.background = `linear-gradient(to bottom, #000 ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
-};
-
-
-// TINY FUNCTIONS *******************************************************************************************************TINY FUNCTIONS**
-function watHeyo(i) {
-    document.getElementById(i).innerHTML = "Heyo";
-};
-
-function getElmt(i) {
-    document.getElementById(i).scrollIntoView();
-};
+createShadow();
+trackerShadow();
 
 
 // LIGHT SWITCH ***********************************************************************************************************LIGHT SWITCH**
+
 function onOff(i) {
     let lightSwitch = document.getElementById(i);
     let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
 
-    if (lightStyle.marginLeft === '10px') {
+    if (lightStyle.marginLeft == '10px') {
 
-        document.body.style.cssText = `background-color: bisque;`;
+        document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
         d3.select("div")
@@ -38,7 +21,7 @@ function onOff(i) {
         createBlob();
     }
 
-    if (lightStyle.marginLeft === '40px') {
+    if (lightStyle.marginLeft == '40px') {
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
@@ -47,11 +30,12 @@ function onOff(i) {
             .remove();
 
         createShadow();
+        trackerShadow();
     }
-
 };
 
 // CURSOR SHADOW *********************************************************************************************************CURSOR SHADOW**
+
 function createShadow() {
     const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
 
@@ -67,87 +51,62 @@ function createShadow() {
     };
 };
 
-createShadow();
+function trackerShadow() {
 
-/*function svgEmpty() { //*****************************************************FIX THIS SHIT
-    let item = document.querySelector("body");
-    let result = item.currentStyle || window.getComputedStyle(item);
-    if (result.backgroundColor == 'rgb(255, 228, 196)') {
-        console.log(result.backgroundColor);
-        return i = 0;       
-    }
-};*/
+    const shadowList = document.querySelectorAll(".shadow");
 
+    for (let i = 0; i < shadowList.length; i++) {
 
-const shadowList = document.querySelectorAll(".shadow");
-
-for (let i = 0; i < shadowList.length; i++) {
-
-    let item = document.querySelector("body");
-    let bodyStyle = window.getComputedStyle(item);
-
-    console.log(bodyStyle.backgroundColor);
-
-    let selection = d3.select(".shadow")
-    console.log(selection.empty());
-
-    document.addEventListener('mousemove', (e) => {
-        shadowList[i].style.cssText = `
+        document.addEventListener('mousemove', (e) => {
+            shadowList[i].style.cssText = `
             left: ${e.clientX}px;
             top: ${e.clientY}px;
             `;
-        // *******************************************************ALSO FIX THIS SHIT
+        });
 
-    });
-
-    document.addEventListener('mousedown', (e) => {
-        shadowList[i].style.cssText = `
+        document.addEventListener('mousedown', (e) => {
+            shadowList[i].style.cssText = `
             width: ${shadowList[i].clientWidth = Math.max(1500)}px;
             height: ${shadowList[i].clientHeight = Math.max(1500)}px;
             left: ${e.clientX}px;
             top: ${e.clientY}px;
             `;
-    });
+        });
 
-    document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. value
-        shadowList[i].style.cssText = `
+        document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. set value
+            shadowList[i].style.cssText = `
             width: ${shadowList[i].clientWidth = false}; 
             height: ${shadowList[i].clientHeight = false};
             left: ${e.clientX}px;
             top: ${e.clientY}px;
             `;
-    });
+        });
 
-    document.addEventListener('mouseleave', (e) => {
-        shadowList[i].style.cssText = `
+        document.addEventListener('mouseleave', (e) => {
+            shadowList[i].style.cssText = `
             width: ${shadowList[i].clientWidth = 0};
             height: ${shadowList[i].clientHeight = 0};
             left: ${e.clientX}px;
             top: ${e.clientY}px;
             `;
-    });
+        });
 
-    document.onload = setToZero();
+        document.onload = setToZero();
 
-    function setToZero() {
-        shadowList[i].style.cssText = `
-            width: ${shadowList[i].clientWidth = 0};
-            height: ${shadowList[i].clientHeight = 0};
+        function setToZero() {
+            shadowList[i].style.cssText = `
+            left: 50vw;
+            top: -1vh;
             `;
+        };
     };
-
-    if ((i == '3') && (bodyStyle.backgroundColor == ('bisque' || 'rgb(255, 228, 196)'))) {
-        i = 0;
-
-    };
-
 };
 
 
-
-
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
-{
+
+function createBlob() {
+
     const blobList = [
         "M253.3 -158.8C307.4 -52.5 316.1 67.5 266.3 147.7C216.5 228 108.3 268.5 29.8 251.3C-48.7 234.1 -97.4 159.3 -124.7 92C-152 24.8 -157.8 -34.9 -133.5 -123.9C-109.1 -213 -54.6 -331.5 22.5 -344.5C99.6 -357.5 199.2 -265 253.3 -158.8",
         "M270.9 -189.8C295.2 -114.2 220.7 -14.9 159.1 55.8C97.4 126.6 48.7 168.8 -40.6 192.2C-129.9 215.7 -259.8 220.3 -297.2 163.6C-334.6 106.8 -279.4 -11.3 -214.5 -110.3C-149.5 -209.3 -74.8 -289.2 24.2 -303.2C123.3 -317.2 246.5 -265.3 270.9 -189.8",
@@ -159,81 +118,86 @@ for (let i = 0; i < shadowList.length; i++) {
     const colors = [
         "rgb(148, 89, 200)",
         "rgba(209, 70, 120, 0.9)",
-        "rgba(243, 59, 33, 0.9)"
+        "rgba(250, 50, 33, 0.9)"
     ];
 
-    function createBlob() {
-        d3.select("body")
-            .insert("svg", ":first-child")
-            .attr("viewBox", "-450 -300 450 300");
+    d3.select("body")
+        .insert("svg", ":first-child")
+        .attr("viewBox", "-450 -280 450 300");
 
-        d3.select("svg")
-            .insert("filter")
-            .attr("id", "f1");
+    d3.select("svg")
+        .insert("filter")
+        .attr("id", "f1");
 
-        d3.select("filter")
-            .insert("feGaussianBlur")
-            .attr("stdDeviation", "80");
+    d3.select("filter")
+        .insert("feGaussianBlur")
+        .attr("stdDeviation", "80");
 
-        let svg = d3.select("svg"),
-            currentBlobs = randomBlobs(colors.length);
+    let svg = d3.select("svg"),
+        currentBlobs = randomBlobs(colors.length);
 
-        let paths = svg
-            .selectAll("path")
-            .data(currentBlobs)
-            .enter()
-            .append("path")
-            .style("fill", function(_, i) {
-                return colors[i];
+    let paths = svg
+        .selectAll("path")
+        .data(currentBlobs)
+        .enter()
+        .append("path")
+        .style("fill", function(_, i) {
+            return colors[i];
+        })
+
+    animateBlob();
+
+    function randomBlobs(numOfBlobs) {
+        return d3.range(numOfBlobs).map(randomBlob);
+    };
+
+    function randomBlob() {
+        const random = Math.floor(Math.random() * blobList.length);
+        return blobList[random];
+    };
+
+    function animateBlob() {
+        let nextBlobs = randomBlobs(currentBlobs.length),
+            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
+
+        currentBlobs = nextBlobs;
+
+        paths
+            .data(interpolators)
+            .transition()
+            .duration(4000)
+            .attrTween("d", function(d) {
+                return d;
             })
-
-        animate();
-
-        function randomBlobs(numOfBlobs) {
-            return d3.range(numOfBlobs).map(randomBlob);
-        };
-
-        function randomBlob() {
-            const random = Math.floor(Math.random() * blobList.length);
-            return blobList[random];
-        };
-
-        function animate() {
-            let nextBlobs = randomBlobs(currentBlobs.length),
-                interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
-
-            currentBlobs = nextBlobs;
-
-            paths
-                .data(interpolators)
-                .transition()
-                .duration(4000)
-                .attrTween("d", function(d) {
-                    return d;
-                })
-                .filter(function(_, i) {
-                    return !i;
-                })
-                .on("end", animate);
-        };
+            .filter(function(_, i) {
+                return !i;
+            })
+            .on("end", animateBlob);
     };
 };
 
-//DETECTS WHEN MOUSE HASN'T BEEN MOVED FOR A DEFINED PERIOD OF TIME (10 seconds) (Needed the opposite of "mousemove")
-/*(function(mouseStopDelay) {
-    var timeout;
-    document.addEventListener('mousemove', function(e) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            var event = new CustomEvent('mousestop', {
-                detail: {
-                    clientX: e.clientX,
-                    clientY: e.clientY
-                },
-                bubbles: true,
-                cancelable: true
-            });
-            e.target.dispatchEvent(event);
-        }, mouseStopDelay);
-    });
-}(1000));*/
+
+// SCROLLER *******************************************************************************************************************SCROLLER**
+
+window.onscroll = () => {
+    let scrollTop = window.scrollY;
+    let docHeight = document.body.offsetHeight;
+    let winHeight = window.innerHeight;
+    let scrollPercent = scrollTop / (docHeight - winHeight);
+    let scrollPercentRounded = Math.round(scrollPercent * 100);
+
+    document.querySelector(
+        ".scroller"
+    ).style.background = `linear-gradient(to bottom, #000 ${scrollPercentRounded}%, #0000 ${scrollPercentRounded}%)`;
+};
+
+
+// TINY FUNCTIONS *******************************************************************************************************TINY FUNCTIONS**
+
+function watHeyo(i) {
+    document.getElementById(i).innerHTML = "Heyo";
+};
+
+function getElmt(i) {
+    document.getElementById(i).scrollIntoView();
+};
