@@ -1,5 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
-
+alert("This site is still being developed!");
 createShadow();
 trackerShadow();
 
