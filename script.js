@@ -122,8 +122,8 @@ function createBlob() {
 
     d3.select("body")
         .insert("svg", ":first-child")
-        .attr("viewBox", "-450 -280 450 300")
-        .attr("id", "backgroundLight");
+        .attr("class", "backgroundLight")
+        .attr("viewBox", "-450 -280 450 300");
 
     d3.select("svg")
         .insert("filter")
