@@ -14,20 +14,20 @@
 <body>
     <div class="scroller"></div>
 
-
-
-
-
-
-
     <div class="menuGrid">
 
         <div class="menu" id="buttonHome" onclick="getElmt('home')">Home</div>
         <div class="menu" id="buttonContact" onclick="getElmt('contact')">Contact</div>
         <div class="menu" id="buttonWat" onclick="watHeyo(id)">Wat</div>
 
-        <button id="lightSwitchBorder"></button>
-        <button id="lightSwitch" onclick="onOff('lightSwitch')"></button>-
+        <div id="lightSwitch">
+            <svg id="moonMoon">
+                <path fill="rgb(90, 90, 90)" stroke="rgb(70, 70, 70)" d="M15 0A1 1 0 0015 30 1 1 0 0015 0"/>
+                <path fill="rgb(20, 20, 20)" stroke="rgb(70, 70, 70)" d="M20 5A1 1 0 0020 8 1 1 0 0020 5M10 17A1 1 0 0010 19 1 1 0 0010 17M26 25A1 1 0 0024 27M26 15A1 1 0 0027 17 1 1 0 0026 15M1 10A1 1 0 005 4"/>
+            </svg>
+        </div>
+        <div id="lightSwitchBorder" onclick="onOff('lightSwitch')"></div>
+
 
     </div>
 

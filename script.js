@@ -12,7 +12,7 @@ function onOff(i) {
     if (lightStyle.marginLeft == '10px') {
 
         document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
-        lightSwitch.style.cssText = `margin-left: 40px`;
+        lightSwitch.style.cssText = `margin-left: 75px`;
 
         d3.select("div")
             .remove();
@@ -20,7 +20,7 @@ function onOff(i) {
         createBlob();
     }
 
-    if (lightStyle.marginLeft == '40px') {
+    if (lightStyle.marginLeft == '75px') {
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;

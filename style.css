@@ -83,26 +83,21 @@
     }
     /* || LIGHT SWITCH ***********************************************************************************************LIGHT SWITCH**/
     
-    #lightSwitch {
+    #lightSwitchBorder {
         grid-area: 6 / 1;
-        width: 20px;
-        height: 20px;
-        margin-top: 2.5px;
-        margin-left: 10px;
+        width: 80px;
+        height: 30px;
+        margin-left: 5px;
         border: 2px solid rgb(10, 10, 10);
-        border-radius: 15px;
-        transition: .7s ease;
+        border-radius: 25px;
         background: transparent;
         cursor: inherit;
     }
     
-    #lightSwitchBorder {
+    #lightSwitch {
         grid-area: 6 / 1;
-        width: 60px;
-        height: 26px;
-        margin-left: 5px;
-        border: 2px solid rgb(10, 10, 10);
-        border-radius: 15px;
+        margin-left: 1px;
+        transition: .7s ease;
         background: transparent;
         cursor: inherit;
     }
