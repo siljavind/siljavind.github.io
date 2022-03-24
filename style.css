@@ -116,13 +116,21 @@ body {
 
 /* || SVG *****************************************************************************************************************SVG**/
 
-svg {
+svg>.backgroundLight {
     position: fixed;
     display: inline-block;
     filter: url("#f1");
     overflow: visible;
     width: 100vw;
     height: 100vh;
+}
+
+#buttonLight {
+    opacity: 0.5;
+}
+
+#buttonLight:hover {
+    opacity: 1;
 }
 
 

@@ -1,5 +1,4 @@
 // ON START *******************************************************************************************************************ON START**
-alert("This site is still being developed!");
 createShadow();
 trackerShadow();
 
@@ -91,7 +90,7 @@ function trackerShadow() {
             `;
         });
 
-        document.onload = setToZero();
+        document.onloadstart = setToZero();
 
         function setToZero() {
             shadowList[i].style.cssText = `
@@ -116,14 +115,15 @@ function createBlob() {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgb(148, 89, 200)",
-        "rgba(209, 70, 120, 0.9)",
-        "rgba(250, 50, 33, 0.9)"
+        "rgba(148, 89, 200, 0.7)",
+        "rgba(209, 70, 100, 0.7)",
+        "rgba(255, 50, 33, 0.7)"
     ];
 
     d3.select("body")
         .insert("svg", ":first-child")
-        .attr("viewBox", "-450 -280 450 300");
+        .attr("viewBox", "-450 -280 450 300")
+        .attr("id", "backgroundLight");
 
     d3.select("svg")
         .insert("filter")
