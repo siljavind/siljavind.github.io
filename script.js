@@ -1,4 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
+alert("UNDER DEVELOPMENT. thx")
 createShadow();
 trackerShadow();
 
@@ -14,7 +15,7 @@ function onOff(i) {
         document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
-        d3.select("div")
+        d3.select("#shadowContainer")
             .remove();
 
         createBlob();
@@ -25,7 +26,7 @@ function onOff(i) {
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
 
-        d3.select("svg")
+        d3.select(".backgroundLight")
             .remove();
 
         createShadow();
@@ -56,6 +57,7 @@ function trackerShadow() {
 
     for (let i = 0; i < shadowList.length; i++) {
 
+        console.log(shadowList[i]);
         document.addEventListener('mousemove', (e) => {
             shadowList[i].style.cssText = `
             left: ${e.clientX}px;
