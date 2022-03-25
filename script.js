@@ -1,5 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
-alert("UNDER DEVELOPMENT. thx")
+alert("UNDER DEVELOPMENT")
 createShadow();
 trackerShadow();
 
