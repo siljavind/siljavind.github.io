@@ -108,13 +108,16 @@
     }
     /* || SVG *****************************************************************************************************************SVG**/
     
+    #blobCon {
+        display: inline-block;
+    }
+    
+    svg,
     .backgroundLight {
         position: fixed;
         display: inline-block;
         filter: url("#f1");
         overflow: visible;
-        width: 100vw;
-        height: 100vh;
     }
     /* || SHADOWS *********************************************************************************************************SHADOWS**/
     

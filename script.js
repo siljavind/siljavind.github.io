@@ -14,21 +14,21 @@ function onOff(i) {
         document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
-        d3.select("#shadowContainer")
-            .remove();
-        createBlob();
-    }
+        var shadowCom = d3.select("#shadowContainer")
+        shadowCom.remove()
+            .exit()
+            .on('end', createBlob());
+    };
 
     if (lightStyle.marginLeft == '40px') {
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
 
-        d3.select("svg")
-            .remove();
-        console.log(document.getElementById("svg"));
-        createShadow();
-        trackerShadow();
+        d3.select("#blobContainer")
+            .remove()
+            .exit()
+            .on('end', createShadow(), trackerShadow())
     }
 };
 
@@ -120,7 +120,11 @@ function createBlob() {
     ];
 
     d3.select("body")
-        .insert("svg", ":first-child")
+        .insert("div", ":first-child")
+        .attr("id", "blobContainer");
+
+    d3.select("div")
+        .insert("svg")
         .attr("class", "backgroundLight")
         .attr("viewBox", "-300 -250 450 300");
 
