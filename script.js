@@ -1,5 +1,4 @@
 // ON START *******************************************************************************************************************ON START**
-alert("UNDER DEVELOPMENT")
 createShadow();
 trackerShadow();
 
@@ -17,7 +16,6 @@ function onOff(i) {
 
         d3.select("#shadowContainer")
             .remove();
-
         createBlob();
     }
 
@@ -26,9 +24,9 @@ function onOff(i) {
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
 
-        d3.select(".backgroundLight")
+        d3.select("svg")
             .remove();
-
+        console.log(document.getElementById("svg"));
         createShadow();
         trackerShadow();
     }
@@ -55,9 +53,9 @@ function trackerShadow() {
 
     const shadowList = document.querySelectorAll(".shadow");
 
+
     for (let i = 0; i < shadowList.length; i++) {
 
-        console.log(shadowList[i]);
         document.addEventListener('mousemove', (e) => {
             shadowList[i].style.cssText = `
             left: ${e.clientX}px;
@@ -92,9 +90,9 @@ function trackerShadow() {
             `;
         });
 
-        document.onloadstart = setToZero();
+        document.onload = toStart();
 
-        function setToZero() {
+        function toStart() {
             shadowList[i].style.cssText = `
             left: 50vw;
             top: -1vh;
@@ -102,7 +100,6 @@ function trackerShadow() {
         };
     };
 };
-
 
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
 
@@ -119,7 +116,7 @@ function createBlob() {
     const colors = [
         "rgba(148, 89, 200, 0.7)",
         "rgba(209, 70, 70, 0.5)",
-        "rgba(255, 50, 33, 0.5)"
+        "rgba(255, 68, 10, 0.7)"
     ];
 
     d3.select("body")
@@ -167,7 +164,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(8000)
+            .duration(5000)
             .attrTween("d", function(d) {
                 return d;
             })
