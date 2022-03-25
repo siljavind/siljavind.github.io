@@ -11,8 +11,8 @@ function onOff(i) {
 
     if (lightStyle.marginLeft == '10px') {
 
-        document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
-        lightSwitch.style.cssText = `margin-left: 75px`;
+        document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
+        lightSwitch.style.cssText = `margin-left: 40px`;
 
         d3.select("div")
             .remove();
@@ -20,7 +20,7 @@ function onOff(i) {
         createBlob();
     }
 
-    if (lightStyle.marginLeft == '75px') {
+    if (lightStyle.marginLeft == '40px') {
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
@@ -116,14 +116,14 @@ function createBlob() {
     ];
     const colors = [
         "rgba(148, 89, 200, 0.7)",
-        "rgba(209, 70, 100, 0.7)",
-        "rgba(255, 50, 33, 0.7)"
+        "rgba(209, 70, 70, 0.5)",
+        "rgba(255, 50, 33, 0.5)"
     ];
 
     d3.select("body")
         .insert("svg", ":first-child")
         .attr("class", "backgroundLight")
-        .attr("viewBox", "-450 -280 450 300");
+        .attr("viewBox", "-300 -250 450 300");
 
     d3.select("svg")
         .insert("filter")
@@ -131,7 +131,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "80");
+        .attr("stdDeviation", "100");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -165,7 +165,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(4000)
+            .duration(8000)
             .attrTween("d", function(d) {
                 return d;
             })
