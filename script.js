@@ -180,7 +180,7 @@ function createBlob() {
         currentBlobs = nextBlobs;
 
         paths
-            .data(interpolators) //LAGGING WHILE ANIMATING WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY (SVG is this in the background while removed??)
+            .data(interpolators) //LAGGING WHILE ANIMATING WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY (Flubber is still active in the background while removed??)
             .transition()
             .duration(10000)
             .delay(1000)
