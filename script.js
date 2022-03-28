@@ -11,7 +11,7 @@ function onOff(i) {
 
     if (lightStyle.marginLeft == '10px') {
 
-        //document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
+        document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
         d3.selectAll(".shadow")
@@ -37,9 +37,9 @@ function onOff(i) {
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
 
+
         d3.select("#blobContainer")
-            .remove()
-            .exit();
+            .remove();
 
         createShadow();
         trackerShadow();
@@ -63,14 +63,14 @@ function createShadow() {
     };
 };
 
-function trackerShadow() {
+function trackerShadow() { //Only on black background
 
     const shadowList = document.querySelectorAll(".shadow");
 
 
     for (let i = 0; i < shadowList.length; i++) {
 
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', (e) => { //VIEWBOX vs. VIEWPORT. Causing the lag?
             shadowList[i].style.cssText = `
             left: ${e.clientX}px;
             top: ${e.clientY}px;
@@ -180,9 +180,10 @@ function createBlob() {
         currentBlobs = nextBlobs;
 
         paths
-            .data(interpolators)
+            .data(interpolators) //LAGGING WHILE ANIMATING WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY (SVG is this in the background while removed??)
             .transition()
             .duration(10000)
+            .delay(1000)
             .attrTween("d", function(d) {
                 return d;
             })
