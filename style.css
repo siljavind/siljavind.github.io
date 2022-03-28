@@ -108,14 +108,14 @@
     }
     /* || SVG *****************************************************************************************************************SVG**/
     
-    #blobCon {
-        display: inline-block;
+    #blobContainer {
+        position: relative;
+        display: block;
     }
     
-    svg,
-    .backgroundLight {
+    .backgroundBlob {
         position: fixed;
-        display: inline-block;
+        display: block;
         filter: url("#f1");
         overflow: visible;
     }
@@ -123,7 +123,7 @@
     
     .shadow {
         position: fixed;
-        display: inline-block;
+        display: block;
         transform: translate(-50%, -50%);
         filter: blur(20px);
         mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));

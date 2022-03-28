@@ -7,17 +7,20 @@ trackerShadow();
 
 function onOff(i) {
     let lightSwitch = document.getElementById(i);
-    let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch);
+    let lightStyle = lightSwitch.currentStyle || window.getComputedStyle(lightSwitch); //'.currentStyle' for IE & .getComputedStyle for FF, Opera, Safari and Chrome.
 
     if (lightStyle.marginLeft == '10px') {
 
         document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
-        var shadowCom = d3.select("#shadowContainer")
-        shadowCom.remove()
-            .exit()
-            .on('end', createBlob());
+
+        d3.select("#shadowContainer")
+            .remove()
+            .exit();
+
+        createBlob();
+
     };
 
     if (lightStyle.marginLeft == '40px') {
@@ -27,8 +30,10 @@ function onOff(i) {
 
         d3.select("#blobContainer")
             .remove()
-            .exit()
-            .on('end', createShadow(), trackerShadow())
+            .exit();
+
+        createShadow();
+        trackerShadow();
     }
 };
 
@@ -114,9 +119,9 @@ function createBlob() {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgba(148, 89, 200, 0.7)",
-        "rgba(209, 70, 70, 0.5)",
-        "rgba(255, 68, 10, 0.7)"
+        "rgba(148, 89, 200, 0.1)",
+        "rgba(209, 70, 70, 0.1)",
+        "rgba(255, 68, 10, 0.1)"
     ];
 
     d3.select("body")
@@ -125,7 +130,7 @@ function createBlob() {
 
     d3.select("div")
         .insert("svg")
-        .attr("class", "backgroundLight")
+        .attr("class", "backgroundBlob")
         .attr("viewBox", "-300 -250 450 300");
 
     d3.select("svg")
@@ -134,7 +139,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "100");
+        .attr("stdDeviation", "1");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -146,7 +151,7 @@ function createBlob() {
         .append("path")
         .style("fill", function(_, i) {
             return colors[i];
-        })
+        });
 
     animateBlob();
 
