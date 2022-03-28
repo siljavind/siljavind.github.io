@@ -89,7 +89,7 @@
         height: 20px;
         margin-top: 2.5px;
         margin-left: 10px;
-        border: 2px solid rgb(10, 10, 10);
+        border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
         transition: .7s ease;
         background: transparent;
@@ -101,7 +101,7 @@
         width: 60px;
         height: 26px;
         margin-left: 5px;
-        border: 2px solid rgb(10, 10, 10);
+        border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
         background: transparent;
         cursor: inherit;

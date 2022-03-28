@@ -11,13 +11,22 @@ function onOff(i) {
 
     if (lightStyle.marginLeft == '10px') {
 
-        document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
+        //document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
-
-        d3.select("#shadowContainer")
-            .remove()
-            .exit();
+        d3.selectAll(".shadow")
+            .transition()
+            .duration(500)
+            .styles({
+                'width': '0px',
+                'height': '0px'
+            })
+            .on("end", function() {
+                d3.select("#shadowContainer")
+                    .transition()
+                    .delay(1000)
+                    .remove();
+            });
 
         createBlob();
 
@@ -34,7 +43,7 @@ function onOff(i) {
 
         createShadow();
         trackerShadow();
-    }
+    };
 };
 
 // CURSOR SHADOW *********************************************************************************************************CURSOR SHADOW**
@@ -119,9 +128,9 @@ function createBlob() {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgba(148, 89, 200, 0.1)",
-        "rgba(209, 70, 70, 0.1)",
-        "rgba(255, 68, 10, 0.1)"
+        "rgba(148, 89, 200, 0.9)",
+        "rgba(209, 70, 70, 0.9)",
+        "rgba(255, 68, 10, 0.9)"
     ];
 
     d3.select("body")
@@ -131,7 +140,7 @@ function createBlob() {
     d3.select("div")
         .insert("svg")
         .attr("class", "backgroundBlob")
-        .attr("viewBox", "-300 -250 450 300");
+        .attr("viewBox", "-350 -250 450 300");
 
     d3.select("svg")
         .insert("filter")
@@ -139,7 +148,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "1");
+        .attr("stdDeviation", "100");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -173,7 +182,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(5000)
+            .duration(10000)
             .attrTween("d", function(d) {
                 return d;
             })
