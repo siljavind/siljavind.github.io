@@ -108,16 +108,22 @@
     }
     /* || SVG *****************************************************************************************************************SVG**/
     
+    area,
+    svg,
+    filter,
+    path,
     #blobContainer {
         position: fixed;
-        display: contents;
+        display: block;
+        pointer-events: none;
     }
     
     .backgroundBlob {
         position: fixed;
-        display: inline-block;
+        display: block;
         filter: url("#f1");
         overflow: visible;
+        pointer-events: none;
     }
     /* || SHADOWS *********************************************************************************************************SHADOWS**/
     

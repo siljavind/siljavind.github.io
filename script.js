@@ -63,29 +63,28 @@ function createShadow() {
     };
 };
 
-function mouseMove() {
-    document.addEventListener('mousemove', (e) => { //VIEWBOX vs. VIEWPORT. Causing the lag?
-        shadowList[i].style.cssText = `
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        `;
-    });
-}
-
-d3.select("body")
-    .on('mousemove', (e) => {
-        var coords = d3.pointer(e);
-        console.log(coords) //MAYBE?
-    })
-
-function trackerShadow() {
+function trackerShadow() { //Only on black background
 
     const shadowList = document.querySelectorAll(".shadow");
 
 
     for (let i = 0; i < shadowList.length; i++) {
+        d3.select(document.body)
+            .on('mousemove', (e) => {
+                console.log(e);
+                var coords1 = d3.pointer(e);
+                var left = coords1[0];
+                var top = coords1[1];
 
-        document.addEventListener('mousemove', (e) => { //VIEWBOX vs. VIEWPORT. Causing the lag?
+                d3.select(shadowList[i])
+                    .styles({
+                        'left': function() { return left + 'px'; },
+                        'top': function() { return top + 'px'; }
+                    });
+                //console.log(shadowList[i])
+            });
+
+        /*document.addEventListener('mousemove', (e) => { //VIEWBOX vs. VIEWPORT. Causing the lag?
             shadowList[i].style.cssText = `
             left: ${e.clientX}px;
             top: ${e.clientY}px;
@@ -126,7 +125,7 @@ function trackerShadow() {
             left: 50vw;
             top: -1vh;
             `;
-        };
+        };*/
     };
 };
 
