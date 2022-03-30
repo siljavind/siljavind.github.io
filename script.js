@@ -52,7 +52,7 @@ function createShadow() {
     const shadowID = ["shadow1", "shadow2", "shadow3", "shadow4"]
 
     d3.select("body")
-        .insert("div", ":first-child") //inserts before first child of parent (body)
+        .insert("div", ":first-child")
         .attr("id", "shadowContainer");
 
     for (let i = 0; i < shadowID.length; i++) {
@@ -63,7 +63,22 @@ function createShadow() {
     };
 };
 
-function trackerShadow() { //Only on black background
+function mouseMove() {
+    document.addEventListener('mousemove', (e) => { //VIEWBOX vs. VIEWPORT. Causing the lag?
+        shadowList[i].style.cssText = `
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        `;
+    });
+}
+
+d3.select("body")
+    .on('mousemove', (e) => {
+        var coords = d3.pointer(e);
+        console.log(coords) //MAYBE?
+    })
+
+function trackerShadow() {
 
     const shadowList = document.querySelectorAll(".shadow");
 
@@ -86,7 +101,7 @@ function trackerShadow() { //Only on black background
             `;
         });
 
-        document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. set value
+        document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === & false vs. set value
             shadowList[i].style.cssText = `
             width: ${shadowList[i].clientWidth = false}; 
             height: ${shadowList[i].clientHeight = false};
@@ -182,7 +197,7 @@ function createBlob() {
         currentBlobs = nextBlobs;
 
         paths
-            .data(interpolators) //LAGGING WHILE ANIMATING WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY (Flubber is still active in the background while removed??)
+            .data(interpolators) //LAGGING WHILE ANIMATING (Flubber still active in the background despite being removed??)
             .transition()
             .duration(10000)
             .delay(1000)
