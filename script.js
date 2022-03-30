@@ -29,7 +29,6 @@ function onOff(i) {
             });
 
         createBlob();
-
     };
 
     if (lightStyle.marginLeft == '40px') {
@@ -41,6 +40,7 @@ function onOff(i) {
         d3.select("#blobContainer")
             .remove();
 
+        console.log(document.getElementById("#blobContainer"));
         createShadow();
         trackerShadow();
     };
@@ -134,10 +134,10 @@ function createBlob() {
     ];
 
     d3.select("body")
-        .insert("div", ":first-child")
+        .insert("area", ":first-child")
         .attr("id", "blobContainer");
 
-    d3.select("div")
+    d3.select("area")
         .insert("svg")
         .attr("class", "backgroundBlob")
         .attr("viewBox", "-350 -250 450 300");
@@ -158,11 +158,13 @@ function createBlob() {
         .data(currentBlobs)
         .enter()
         .append("path")
+        .classed("backgroundBlob", true)
         .style("fill", function(_, i) {
             return colors[i];
         });
 
     animateBlob();
+
 
     function randomBlobs(numOfBlobs) {
         return d3.range(numOfBlobs).map(randomBlob);

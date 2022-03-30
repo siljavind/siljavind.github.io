@@ -109,13 +109,13 @@
     /* || SVG *****************************************************************************************************************SVG**/
     
     #blobContainer {
-        position: relative;
-        display: block;
+        position: fixed;
+        display: contents;
     }
     
     .backgroundBlob {
         position: fixed;
-        display: block;
+        display: inline-block;
         filter: url("#f1");
         overflow: visible;
     }
