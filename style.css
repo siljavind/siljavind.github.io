@@ -89,7 +89,7 @@
         height: 20px;
         margin-top: 2.5px;
         margin-left: 10px;
-        border: 2px solid rgb(10, 10, 10);
+        border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
         transition: .7s ease;
         background: transparent;
@@ -101,19 +101,24 @@
         width: 60px;
         height: 26px;
         margin-left: 5px;
-        border: 2px solid rgb(10, 10, 10);
+        border: 1px solid rgb(10, 10, 10);
         border-radius: 15px;
         background: transparent;
         cursor: inherit;
     }
     /* || SVG *****************************************************************************************************************SVG**/
     
-    #blobCon {
-        display: inline-block;
+    area,
+    svg,
+    filter,
+    path,
+    #blobContainer {
+        position: fixed;
+        display: block;
+        pointer-events: none;
     }
     
-    svg,
-    .backgroundLight {
+    .backgroundBlob {
         position: fixed;
         overflow: visible;
         display: inline-block;
@@ -123,7 +128,7 @@
     
     .shadow {
         position: fixed;
-        display: inline-block;
+        display: block;
         transform: translate(-50%, -50%);
         filter: blur(20px);
         mask-image: radial-gradient(rgba(255, 228, 196, 0.5), rgba(255, 228, 196, 0));
