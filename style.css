@@ -108,6 +108,11 @@
     }
     /* || SVG *****************************************************************************************************************SVG**/
     
+    #blobCon {
+        display: inline-block;
+    }
+    
+    svg,
     .backgroundLight {
         position: fixed;
         overflow: visible;

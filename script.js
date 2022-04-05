@@ -14,11 +14,14 @@ function onOff(i) {
         document.body.style.cssText = `background-color: rgb(252, 240, 225);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
-        d3.select("div")
-            .remove();
+        var shadowCom = d3.select("#shadowContainer")
+        shadowCom.remove()
+            .exit()
+            .on('end', createBlob());
+    };
 
-        createBlob();
-    }
+    createBlob();
+
 
     if (lightStyle.marginLeft == '40px') {
 
@@ -54,6 +57,7 @@ function createShadow() {
 function trackerShadow() {
 
     const shadowList = document.querySelectorAll(".shadow");
+
 
     for (let i = 0; i < shadowList.length; i++) {
 
@@ -91,9 +95,9 @@ function trackerShadow() {
             `;
         });
 
-        document.onloadstart = setToZero();
+        document.onload = toStart();
 
-        function setToZero() {
+        function toStart() {
             shadowList[i].style.cssText = `
             left: 50vw;
             top: -1vh;
@@ -101,7 +105,6 @@ function trackerShadow() {
         };
     };
 };
-
 
 // SVG BLOB *******************************************************************************************************************SVG BLOB**
 
@@ -122,9 +125,13 @@ function createBlob() {
     ];
 
     d3.select("body")
-        .insert("svg", ":first-child")
+        .insert("div", ":first-child")
+        .attr("id", "blobContainer");
+
+    d3.select("div")
+        .insert("svg")
         .attr("class", "backgroundLight")
-        .attr("viewBox", "-450 -280 450 300");
+        .attr("viewBox", "-300 -250 450 300");
 
     d3.select("svg")
         .insert("filter")
@@ -132,7 +139,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "90");
+        .attr("stdDeviation", "100");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -166,7 +173,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(4000)
+            .duration(5000)
             .attrTween("d", function(d) {
                 return d;
             })
