@@ -20,7 +20,6 @@ function onOff(i) {
             .exit();
 
         createBlob();
-
     };
 
     if (lightStyle.marginLeft == '40px') {
