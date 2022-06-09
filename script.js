@@ -1,5 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
-//alert("Under construction");
+alert("Under construction");
 createShadow();
 trackerShadow();
 
@@ -118,9 +118,9 @@ function createBlob() {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgba(148, 89, 200, 0.6)",
-        "rgba(209, 70, 70, 0.7)",
-        "rgba(255, 68, 10, 0.5)"
+        "rgba(148, 89, 200, 0.8)",
+        "rgba(255, 0, 128, 0.8)",
+        "rgba(255, 68, 10, 1)"
     ];
 
     d3.select("body")
@@ -138,7 +138,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "50");
+        .attr("stdDeviation", "60");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
