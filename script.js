@@ -165,7 +165,7 @@ function createBlob() {
 
     function animateBlob() {
         let nextBlobs = randomBlobs(currentBlobs.length),
-            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
+            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 100 });
 
         currentBlobs = nextBlobs;
 
