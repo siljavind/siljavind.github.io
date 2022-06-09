@@ -12,7 +12,7 @@ function onOff(i) {
 
     if (lightStyle.marginLeft == '10px') {
 
-        document.body.style.cssText = `background-color: rgb(250, 180, 144);`;
+        document.body.style.cssText = `background-color: rgb(252, 242, 230);`;
         lightSwitch.style.cssText = `margin-left: 40px`;
 
         d3.select("#shadowContainer")
@@ -26,6 +26,10 @@ function onOff(i) {
 
         document.body.style.cssText = `background-color: black`;
         lightSwitch.style.cssText = `margin-left: 10px`;
+
+        d3.select("#blobContainer")
+            .selectAll("*")
+            .remove()
 
         d3.select("#blobContainer")
             .remove()
@@ -172,7 +176,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(10000)
+            .duration(11000)
             .attrTween("d", function(d) {
                 return d;
             })
