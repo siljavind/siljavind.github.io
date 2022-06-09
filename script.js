@@ -1,5 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
-alert("Under construction");
+//alert("Under construction");
 createShadow();
 trackerShadow();
 
@@ -138,7 +138,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "90");
+        .attr("stdDeviation", "50");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -172,7 +172,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(8000)
+            .duration(5000)
             .attrTween("d", function(d) {
                 return d;
             })

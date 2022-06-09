@@ -85,7 +85,6 @@
     
     #lightSwitch {
         grid-area: 6 / 1;
-        position: fixed;
         width: 20px;
         height: 20px;
         margin-top: 2.5px;
@@ -99,7 +98,6 @@
     
     #lightSwitchBorder {
         grid-area: 6 / 1;
-        position: fixed;
         width: 60px;
         height: 26px;
         margin-left: 5px;
