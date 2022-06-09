@@ -45,7 +45,7 @@
     .menuGrid {
         position: sticky;
         display: grid;
-        grid-template-rows: repeat(4, 10vh) 55vh 5vh;
+        grid-template-rows: repeat(4, 10vh) 55vh min(30px);
         grid-template-columns: repeat(3, 25px) repeat(4, 0px);
         float: left;
         top: 0;
