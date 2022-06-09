@@ -33,7 +33,9 @@
     }
     
     .startText {
-        grid-area: 4 / 1;
+        grid-area: 7 / 1;
+        text-align: start;
+        font-size: xx-large;
     }
     
     .contact {

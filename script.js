@@ -28,10 +28,6 @@ function onOff(i) {
         lightSwitch.style.cssText = `margin-left: 10px`;
 
         d3.select("#blobContainer")
-            .selectAll("*")
-            .remove()
-
-        d3.select("#blobContainer")
             .remove()
             .exit(); // Necessary?
 
@@ -61,7 +57,6 @@ function trackerShadow() {
 
     const shadowList = document.querySelectorAll(".shadow");
 
-
     for (let i = 0; i < shadowList.length; i++) {
 
         document.addEventListener('mousemove', (e) => {
@@ -80,7 +75,7 @@ function trackerShadow() {
             `;
         });
 
-        document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. set value
+        document.addEventListener('mouseup', (e) => { //Why does this work?? == vs. === &= false vs. defined value
             shadowList[i].style.cssText = `
             width: ${shadowList[i].clientWidth = false}; 
             height: ${shadowList[i].clientHeight = false};
@@ -122,9 +117,10 @@ function createBlob() {
         "M317.3 -181C382.2 -70.7 386 77.2 322.9 141.7C259.8 206.3 129.9 187.5 24 173.7C-82 159.8 -164 150.9 -198.6 102.8C-233.2 54.7 -220.5 -32.7 -179.6 -129.2C-138.6 -225.7 -69.3 -331.3 28.4 -347.7C126.2 -364.2 252.3 -291.3 317.3 -181"
     ];
     const colors = [
-        "rgba(148, 89, 200, 0.8)",
-        "rgba(255, 0, 128, 0.8)",
-        "rgba(255, 68, 10, 1)"
+        "rgb(27, 150, 244)",
+        "rgb(148, 89, 200)",
+        "rgb(255, 0, 128)",
+        "rgb(255, 68, 10)"
     ];
 
     d3.select("body")
@@ -134,7 +130,7 @@ function createBlob() {
     d3.select("div")
         .insert("svg")
         .attr("class", "backgroundBlob")
-        .attr("viewBox", "-300 -250 450 300");
+        .attr("viewBox", "-600 -250 850 600");
 
     d3.select("svg")
         .insert("filter")
@@ -142,7 +138,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "60");
+        .attr("stdDeviation", "80");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -169,14 +165,14 @@ function createBlob() {
 
     function animateBlob() {
         let nextBlobs = randomBlobs(currentBlobs.length),
-            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 100 });
+            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
 
         currentBlobs = nextBlobs;
 
         paths
             .data(interpolators)
             .transition()
-            .duration(11000)
+            .duration(5000)
             .attrTween("d", function(d) {
                 return d;
             })
@@ -206,7 +202,7 @@ window.onscroll = () => {
 // TINY FUNCTIONS *******************************************************************************************************TINY FUNCTIONS**
 
 function watHeyo(i) {
-    document.getElementById(i).innerHTML = "Heyo";
+    document.getElementById(i).innerHTML = "Got ya";
 };
 
 function getElmt(i) {
