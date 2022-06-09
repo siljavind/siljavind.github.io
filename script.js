@@ -1,5 +1,5 @@
 // ON START *******************************************************************************************************************ON START**
-alert("Under construction");
+//alert("Under construction");
 createShadow();
 trackerShadow();
 
@@ -206,5 +206,5 @@ function watHeyo(i) {
 };
 
 function getElmt(i) {
-    document.getElementById(i).scrollIntoView();
+    document.getElementById(i).scrollIntoView({ block: "center" });
 };
