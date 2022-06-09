@@ -172,7 +172,7 @@ function createBlob() {
         paths
             .data(interpolators)
             .transition()
-            .duration(5000)
+            .duration(8000)
             .attrTween("d", function(d) {
                 return d;
             })
