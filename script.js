@@ -202,7 +202,7 @@ window.onscroll = () => {
 // TINY FUNCTIONS *******************************************************************************************************TINY FUNCTIONS**
 
 function watHeyo(i) {
-    document.getElementById(i).innerHTML = "Something";
+    document.getElementById(i).innerHTML = "Heyo";
 };
 
 function getElmt(i) {
