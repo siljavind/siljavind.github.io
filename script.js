@@ -138,7 +138,7 @@ function createBlob() {
 
     d3.select("filter")
         .insert("feGaussianBlur")
-        .attr("stdDeviation", "80");
+        .attr("stdDeviation", "120");
 
     let svg = d3.select("svg"),
         currentBlobs = randomBlobs(colors.length);
@@ -202,7 +202,7 @@ window.onscroll = () => {
 // TINY FUNCTIONS *******************************************************************************************************TINY FUNCTIONS**
 
 function watHeyo(i) {
-    document.getElementById(i).innerHTML = "Got ya";
+    document.getElementById(i).innerHTML = "Something";
 };
 
 function getElmt(i) {
