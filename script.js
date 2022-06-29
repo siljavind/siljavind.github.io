@@ -148,7 +148,7 @@ function createBlob() {
         .data(currentBlobs)
         .enter()
         .append("path")
-        .style("fill", function(_, i) {
+        .style("fill", function (_, i) {
             return colors[i];
         });
 
@@ -165,7 +165,7 @@ function createBlob() {
 
     function animateBlob() {
         let nextBlobs = randomBlobs(currentBlobs.length),
-            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 100 });
+            interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
 
         currentBlobs = nextBlobs;
 
@@ -173,10 +173,10 @@ function createBlob() {
             .data(interpolators)
             .transition()
             .duration(5000)
-            .attrTween("d", function(d) {
+            .attrTween("d", function (d) {
                 return d;
             })
-            .filter(function(_, i) {
+            .filter(function (_, i) {
                 return !i;
             })
             .on("end", animateBlob);
