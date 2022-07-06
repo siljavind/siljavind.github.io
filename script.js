@@ -154,6 +154,7 @@ function createBlob() {
 
     animateBlob();
 
+
     function randomBlobs(numOfBlobs) {
         return d3.range(numOfBlobs).map(randomBlob);
     };
@@ -164,6 +165,11 @@ function createBlob() {
     };
 
     function animateBlob() {
+
+        if (document.body.style.cssText != `background-color: rgb(252, 242, 230);`) {
+            return;
+        }
+
         let nextBlobs = randomBlobs(currentBlobs.length),
             interpolators = flubber.interpolateAll(currentBlobs, nextBlobs, { match: false, maxSegmentLength: 50 });
 
