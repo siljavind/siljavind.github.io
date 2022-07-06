@@ -7,7 +7,7 @@ body {
   font-family: ArtDecoFont;
   scroll-behavior: smooth;
   cursor: crosshair;
-  user-select: none;
+  /* user-select: none; */
   margin: 0;
   padding: 0;
 }
@@ -33,9 +33,11 @@ body {
 }
 
 .startText {
-  grid-area: 7 / 1;
+  grid-area: 1 / 1;
   text-align: start;
   font-size: 35px;
+  position: absolute;
+  top: 70vh;
 }
 
 .contact {
